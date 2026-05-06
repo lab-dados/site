@@ -156,30 +156,33 @@ h1 strong, h2 strong { color: var(--ld-blue-700); font-weight: 700; }
   font-size: 0.92rem;
   line-height: 1.55;
 }
-.ld-footer-brand .ld-footer-icons {
-  display: flex;
-  gap: 0.6rem;
-  font-size: 1.1rem;
-}
-.ld-footer-brand .ld-footer-icons a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.2rem;
-  height: 2.2rem;
+.ld-footer-brand a.ld-footer-link {
+  display: inline-block;
+  padding: 0.4rem 0.95rem;
   border-radius: 999px;
   border: 1px solid var(--ld-line);
   color: var(--ld-navy);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
   transition: background .15s ease, border-color .15s ease;
 }
-.ld-footer-brand .ld-footer-icons a:hover {
+.ld-footer-brand a.ld-footer-link:hover {
   background: rgba(58,120,176,0.10);
   border-color: rgba(58,120,176,0.35);
+}
+.ld-footer-brand .ld-footer-sep {
+  color: var(--ld-line);
+  margin: 0 0.15rem;
 }
 .ld-footer-brand .ld-footer-fineprint {
   color: var(--ld-mute);
   font-size: 0.82rem;
-  margin-top: 0.4rem;
+}
+// Tighten paragraph spacing inside the footer brand block (Markdown turns
+// each paragraph into a <p>, which would otherwise push items apart).
+.ld-footer-brand p {
+  margin: 0;
 }
 
 // Hero block (used in index)
@@ -256,37 +259,63 @@ h1 strong, h2 strong { color: var(--ld-blue-700); font-weight: 700; }
   color: var(--ld-navy);
 }
 
-// Hero artwork — the LD mark on a soft blue glow.
+// Hero artwork — animated LD mark with shining squares + wordmark.
 .ld-hero-mark {
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 320px;
-  padding: 2rem;
+  gap: 1.5rem;
+  min-height: 360px;
+  padding: 2rem 1rem;
 }
 .ld-hero-mark::before {
-  // Radial halo behind the mark.
   content: "";
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(360px 360px at 50% 50%, rgba(58,120,176,0.20), transparent 65%),
+    radial-gradient(360px 360px at 50% 45%, rgba(58,120,176,0.22), transparent 65%),
     radial-gradient(220px 220px at 35% 60%, rgba(16,62,92,0.10), transparent 70%);
   pointer-events: none;
 }
-.ld-hero-mark img {
+.ld-mark-svg {
   position: relative;
   z-index: 1;
   width: 78%;
-  max-width: 360px;
+  max-width: 280px;
   height: auto;
   filter: drop-shadow(0 18px 40px rgba(16,62,92,0.18));
-  animation: ld-mark-float 7s ease-in-out infinite;
 }
-@keyframes ld-mark-float {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-6px); }
+.ld-mark-svg .outline {
+  fill: none;
+  stroke: var(--ld-navy);
+  stroke-width: 5;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.ld-mark-svg .dot {
+  fill: var(--ld-blue);
+  transition: fill 0.4s ease, filter 0.4s ease;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+.ld-mark-svg .dot.shine {
+  fill: #7eb5e0;
+  filter: drop-shadow(0 0 8px rgba(126,181,224,0.95));
+}
+.ld-hero-wordmark {
+  position: relative;
+  z-index: 1;
+  font-family: $headings-font-family;
+  font-weight: 700;
+  font-size: clamp(2rem, 4.4vw, 3.1rem);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--ld-navy);
+}
+.ld-hero-wordmark span {
+  color: var(--ld-blue);
 }
 
 // Stat strip

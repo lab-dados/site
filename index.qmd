@@ -3,6 +3,58 @@ pagetitle: "LabDados · Pesquisa empírica em direito, com ciência aberta"
 description: "Laboratório de Dados e Pesquisa Empírica em Direito da FGV Direito SP."
 page-layout: full
 toc: false
+include-after-body:
+  text: |
+    <script>
+    (function () {
+      const dots = Array.from(document.querySelectorAll('.ld-mark-svg .dot'));
+      if (!dots.length) return;
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      // Diagonal "wave" of brightness sweeps through the grid.
+      // Each dot has a data-pos="row,col"; we phase by row+col.
+      const phased = dots.map(d => {
+        const [r, c] = (d.dataset.pos || '0,0').split(',').map(Number);
+        return { el: d, phase: r + c };
+      });
+      const maxPhase = Math.max(...phased.map(p => p.phase));
+      const cycle = (maxPhase + 4) * 220; // ms
+
+      let start = performance.now();
+      function tick(now) {
+        const t = ((now - start) % cycle) / 220; // current "phase" position
+        phased.forEach(({ el, phase }) => {
+          const d = Math.abs(t - phase);
+          el.classList.toggle('shine', d < 0.6);
+        });
+        requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+
+      // Hover bonus: light up the closest dot to the cursor.
+      const svg = document.querySelector('.ld-mark-svg');
+      if (svg) {
+        svg.addEventListener('pointermove', (ev) => {
+          const r = svg.getBoundingClientRect();
+          const x = ev.clientX - r.left;
+          const y = ev.clientY - r.top;
+          let closest = null, best = Infinity;
+          dots.forEach(d => {
+            const b = d.getBoundingClientRect();
+            const cx = b.left - r.left + b.width / 2;
+            const cy = b.top - r.top + b.height / 2;
+            const dist = (x - cx) ** 2 + (y - cy) ** 2;
+            if (dist < best) { best = dist; closest = d; }
+          });
+          dots.forEach(d => d.classList.remove('hover'));
+          if (closest && best < 6000) closest.classList.add('shine');
+        });
+        svg.addEventListener('pointerleave', () => {
+          dots.forEach(d => d.classList.remove('hover'));
+        });
+      }
+    })();
+    </script>
 ---
 
 ::: {.ld-hero}
@@ -21,9 +73,29 @@ O LabDados é um laboratório da **FGV Direito SP** que constrói ferramentas, c
 [Sobre o laboratório](sobre/index.qmd){.ld-cta .ld-cta--ghost}
 :::
 
-::: {.ld-hero-mark}
-![Mark do LabDados](assets/logo-mark.png)
-:::
+```{=html}
+<div class="ld-hero-mark">
+  <svg class="ld-mark-svg" viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="LabDados">
+    <!-- L outline -->
+    <path class="outline" d="M22,18 L22,158 L130,158"/>
+    <!-- D outline -->
+    <path class="outline" d="M138,18 L160,18 C195,18 210,52 210,88 C210,124 195,158 160,158 L138,158 Z"/>
+    <!-- 3x3 grid of square "data" dots inside the L -->
+    <g>
+      <rect class="dot" data-pos="0,0" x="40"  y="40"  width="20" height="20" rx="3"/>
+      <rect class="dot" data-pos="0,1" x="68"  y="40"  width="20" height="20" rx="3"/>
+      <rect class="dot" data-pos="0,2" x="96"  y="40"  width="20" height="20" rx="3"/>
+      <rect class="dot" data-pos="1,0" x="40"  y="68"  width="20" height="20" rx="3"/>
+      <rect class="dot" data-pos="1,1" x="68"  y="68"  width="20" height="20" rx="3"/>
+      <rect class="dot" data-pos="1,2" x="96"  y="68"  width="20" height="20" rx="3"/>
+      <rect class="dot" data-pos="2,0" x="40"  y="96"  width="20" height="20" rx="3"/>
+      <rect class="dot" data-pos="2,1" x="68"  y="96"  width="20" height="20" rx="3"/>
+      <rect class="dot" data-pos="2,2" x="96"  y="96"  width="20" height="20" rx="3"/>
+    </g>
+  </svg>
+  <div class="ld-hero-wordmark">Lab<span>Dados</span></div>
+</div>
+```
 :::
 :::
 :::
