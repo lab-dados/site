@@ -3,55 +3,11 @@ pagetitle: "LabDados · Pesquisa empírica em direito, com ciência aberta"
 description: "Laboratório de Dados e Pesquisa Empírica em Direito da FGV Direito SP."
 page-layout: full
 toc: false
-include-after-body:
-  text: |
-    <script>
-    (function () {
-      const dots = Array.from(document.querySelectorAll('.ld-mark-svg .dot'));
-      if (!dots.length) return;
-      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-      // Diagonal "wave" of brightness sweeps through the grid.
-      // Each dot has a data-pos="row,col"; we phase by row+col.
-      const phased = dots.map(d => {
-        const [r, c] = (d.dataset.pos || '0,0').split(',').map(Number);
-        return { el: d, phase: r + c };
-      });
-      const maxPhase = Math.max(...phased.map(p => p.phase));
-      const cycle = (maxPhase + 4) * 220; // ms
-
-      // Smooth, continuous wave: brightness is a bell curve in phase
-      // distance, color/alpha interpolated per-frame so there is no
-      // discrete on/off step.
-      const baseR = 58, baseG = 120, baseB = 176;     // var(--ld-blue)
-      const peakR = 255, peakG = 255, peakB = 255;    // near-white shine
-      const baseA = 0.30, peakA = 0.92;
-      const sigma = 1.0;                              // wave width
-      const stepMs = 520;
-      const cycleMs = (maxPhase + 5) * stepMs;
-      let start = performance.now();
-      function tick(now) {
-        const t = ((now - start) % cycleMs) / stepMs;
-        phased.forEach(({ el, phase }) => {
-          const d = (t - phase) / sigma;
-          const w = Math.exp(-d * d);                 // smooth gaussian
-          const r = Math.round(baseR + (peakR - baseR) * w);
-          const g = Math.round(baseG + (peakG - baseG) * w);
-          const b = Math.round(baseB + (peakB - baseB) * w);
-          const a = baseA + (peakA - baseA) * w;
-          el.setAttribute('fill', `rgba(${r},${g},${b},${a.toFixed(3)})`);
-        });
-        requestAnimationFrame(tick);
-      }
-      requestAnimationFrame(tick);
-    })();
-    </script>
 ---
 
 ::: {.ld-hero}
 ::: {.container-page}
-::: {.ld-split}
-::: {}
+::: {.ld-hero-content}
 [Lab[Dados]{.dados}]{.ld-brand-label}
 
 # Pesquisa empírica em direito **com ciência aberta**
@@ -62,30 +18,6 @@ O **LabDados** é um núcleo de pesquisa empírica da **FGV Direito SP**, especi
 
 [Ver ferramentas](ferramentas/index.qmd){.ld-cta .ld-cta--primary}
 [Sobre o laboratório](sobre/index.qmd){.ld-cta .ld-cta--ghost}
-:::
-
-```{=html}
-<div class="ld-hero-mark">
-  <svg class="ld-mark-svg" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="LabDados">
-    <!-- 3x3 grid of square "data" cells, top-left intentionally missing.
-         Squares are 56x56 with 32px gutter. A JS-driven Gaussian wave of
-         light sweeps through them with continuous color interpolation. -->
-    <g>
-      <!-- row 0: skip col 0 -->
-      <rect class="dot" data-pos="0,1" x="92"  y="4"   width="56" height="56"/>
-      <rect class="dot" data-pos="0,2" x="180" y="4"   width="56" height="56"/>
-      <!-- row 1 -->
-      <rect class="dot" data-pos="1,0" x="4"   y="92"  width="56" height="56"/>
-      <rect class="dot" data-pos="1,1" x="92"  y="92"  width="56" height="56"/>
-      <rect class="dot" data-pos="1,2" x="180" y="92"  width="56" height="56"/>
-      <!-- row 2 -->
-      <rect class="dot" data-pos="2,0" x="4"   y="180" width="56" height="56"/>
-      <rect class="dot" data-pos="2,1" x="92"  y="180" width="56" height="56"/>
-      <rect class="dot" data-pos="2,2" x="180" y="180" width="56" height="56"/>
-    </g>
-  </svg>
-</div>
-```
 :::
 :::
 :::
