@@ -162,7 +162,9 @@ def render_equipe() -> str:
 
 
 def _ferramenta_card(it: dict) -> str:
-    primary = it.get("repo") or it.get("link") or it.get("docs") or "#"
+    # Primary click goes to the docs (where users actually want to land);
+    # fallback to repo or other link when there is no docs site.
+    primary = it.get("docs") or it.get("repo") or it.get("link") or "#"
     tags = []
     if it.get("linguagem"):
         tags.append(f'<code>{_e(it["linguagem"])}</code>')

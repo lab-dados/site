@@ -120,14 +120,16 @@ Três frentes que se reforçam: **ferramentas** que retiram fricção da pesquis
 ## Escritório de apoio
 
 ```{=html}
-<a class="ld-callout" href="escritorio/">
+<a class="ld-callout" href="https://labdados-frontend.livelydesert-3e3e3dd8.brazilsouth.azurecontainerapps.io" target="_blank" rel="noopener">
   <div>
     <h3>Precisa de OCR, transcrição ou estruturação de textos para uma pesquisa?</h3>
     <p>O escritório de apoio do LabDados processa PDFs, áudio e textos sob demanda. Modos nuvem e local, dados em Brazil South com retenção de 72h.</p>
   </div>
-  <span class="ld-cta">Conhecer o escritório →</span>
+  <span class="ld-cta">Acessar o portal →</span>
 </a>
 ```
+
+[Como funciona o escritório](escritorio/){.ld-cta .ld-cta--ghost style="margin-top: -0.75rem;"}
 :::
 
 ::: {.ld-section}

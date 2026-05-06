@@ -15,7 +15,6 @@ relatórios.
 ---
 
 ::: {.ld-manifesto}
-Quer propor uma pesquisa? Mande e-mail para `labdados.direitosp [at] fgv [.] br` ou abra
-uma *issue* no repositório [`lab-dados/adm`](https://github.com/lab-dados/adm/issues).
+Quer propor uma pesquisa? Mande e-mail para `labdados.direitosp [at] fgv [.] br`.
 Olhamos demandas externas regularmente.
 :::

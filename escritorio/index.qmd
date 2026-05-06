@@ -113,6 +113,5 @@ Acesse o [portal do escritório](https://labdados-frontend.livelydesert-3e3e3dd8
 
 ## Código e arquitetura
 
-- Frontend e backend: [`lab-dados/escritorio-servicos`](https://github.com/lab-dados/escritorio-servicos)
 - SDK Python: [`lab-dados/labdados-sdk`](https://github.com/lab-dados/labdados-sdk)
 - Stack: FastAPI + PostgreSQL + Azure Container Apps (com GPU serverless T4 para transcrição). E-mail via Azure Communication Services.

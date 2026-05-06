@@ -12,7 +12,6 @@
   resumo: "Avaliação sistemática de LLMs para extração estruturada de metadados de instruções técnicas do TCU."
   parceiros: ["FGV Direito SP"]
   ano_inicio: 2026
-  repo: "https://github.com/lab-dados/benchmark-llms"
 
 - titulo: "Scoping review — IA na pesquisa jurídica"
   status: "em-andamento"

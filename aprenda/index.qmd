@@ -13,8 +13,7 @@ Materiais para usar dados em pesquisa empírica em direito. Tudo aberto.
 ## Workshops e oficinas
 
 A agenda de workshops do laboratório é anunciada no
-[blog do Substack](https://labdados.substack.com/){target="_blank"} e nas
-issues abertas do [`lab-dados/adm`](https://github.com/lab-dados/adm/issues).
+[blog do Substack](https://labdados.substack.com/){target="_blank"}.
 Em breve, agenda integrada com Google Calendar.
 
 ## Quer trazer um curso para a sua instituição?
