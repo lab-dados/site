@@ -55,7 +55,7 @@ include-after-body:
 # Pesquisa empírica em direito **com ciência aberta**
 
 ::: {.lead}
-O **LabDados** é um núcleo de pesquisa empírica da **FGV Direito SP**. Investigamos o sistema de justiça brasileiro com dados, incluindo o uso e o impacto da inteligência artificial no direito. Também desenvolvemos ferramentas e cursos para apoiar quem faz pesquisa empírica.
+O **LabDados** é um núcleo de pesquisa empírica da **FGV Direito SP**, especializado em **inteligência artificial** aplicada ao direito. Fazemos pesquisa **com IA** (como método de investigação) e **sobre IA** (analisando seu uso e impacto), e desenvolvemos ferramentas e cursos para apoiar quem faz o mesmo.
 :::
 
 [Ver ferramentas](ferramentas/index.qmd){.ld-cta .ld-cta--primary}
