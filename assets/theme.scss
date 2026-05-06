@@ -265,15 +265,15 @@ h1 strong, h2 strong { color: var(--ld-blue-700); font-weight: 700; }
   color: var(--ld-navy);
 }
 
-// Hero artwork — animated LD mark with shining squares + wordmark.
+// Hero artwork — soft, low-contrast "data grid" with a gentle wave of
+// near-white shimmer. Lives on the right side of the hero, intended to
+// frame the headline rather than steal attention from it.
 .ld-hero-mark {
   position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
-  min-height: 360px;
+  min-height: 320px;
   padding: 2rem 1rem;
 }
 .ld-hero-mark::before {
@@ -281,44 +281,22 @@ h1 strong, h2 strong { color: var(--ld-blue-700); font-weight: 700; }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(360px 360px at 50% 45%, rgba(58,120,176,0.22), transparent 65%),
-    radial-gradient(220px 220px at 35% 60%, rgba(16,62,92,0.10), transparent 70%);
+    radial-gradient(360px 360px at 50% 45%, rgba(58,120,176,0.14), transparent 65%);
   pointer-events: none;
 }
 .ld-mark-svg {
   position: relative;
   z-index: 1;
-  width: 70%;
-  max-width: 240px;
+  width: 80%;
+  max-width: 300px;
   height: auto;
-  filter: drop-shadow(0 14px 30px rgba(16,62,92,0.16));
 }
 .ld-mark-svg .dot {
-  fill: var(--ld-blue);
-  transition: fill 0.35s ease, filter 0.35s ease, transform 0.35s ease;
-  transform-origin: center;
-  transform-box: fill-box;
+  fill: rgba(58,120,176,0.32);
+  transition: fill 0.6s ease, opacity 0.6s ease;
 }
 .ld-mark-svg .dot.shine {
-  fill: #7eb5e0;
-  filter: drop-shadow(0 0 12px rgba(126,181,224,0.95));
-  transform: scale(1.08);
-}
-.ld-hero-wordmark {
-  position: relative;
-  z-index: 1;
-  // Manrope is the closest free Google Font to the official logo's wordmark
-  // (humanist geometric sans, rounded terminals, narrow apertures).
-  font-family: "Manrope", $headings-font-family;
-  font-weight: 800;
-  font-size: clamp(2rem, 4.4vw, 3.2rem);
-  letter-spacing: -0.025em;
-  line-height: 1;
-  color: var(--ld-navy);
-}
-.ld-hero-wordmark span {
-  color: var(--ld-blue);
-  font-weight: 700;
+  fill: rgba(255,255,255,0.96);
 }
 
 // Stat strip

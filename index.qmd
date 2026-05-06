@@ -20,12 +20,14 @@ include-after-body:
       const maxPhase = Math.max(...phased.map(p => p.phase));
       const cycle = (maxPhase + 4) * 220; // ms
 
+      const stepMs = 380;
+      const cycleMs = (maxPhase + 4) * stepMs;
       let start = performance.now();
       function tick(now) {
-        const t = ((now - start) % cycle) / 220; // current "phase" position
+        const t = ((now - start) % cycleMs) / stepMs;
         phased.forEach(({ el, phase }) => {
           const d = Math.abs(t - phase);
-          el.classList.toggle('shine', d < 0.6);
+          el.classList.toggle('shine', d < 0.7);
         });
         requestAnimationFrame(tick);
       }
@@ -63,10 +65,10 @@ include-after-body:
 ::: {}
 [Em construção · v0.1]{.ld-eyebrow}
 
-# Pesquisa empírica em direito, **com ciência aberta**
+# Pesquisa empírica em direito **com ciência aberta**
 
 ::: {.lead}
-O LabDados é um laboratório da **FGV Direito SP** que constrói ferramentas, conduz pesquisas e ensina pessoas a usar dados para entender o sistema de justiça brasileiro. Tudo que produzimos (código, dados, métodos) é publicado abertamente.
+Somos um núcleo de pesquisa empírica da **FGV Direito SP**. Investigamos o sistema de justiça brasileiro com dados, incluindo o uso e o impacto da inteligência artificial no direito. Também desenvolvemos ferramentas e cursos para apoiar quem faz pesquisa empírica.
 :::
 
 [Ver ferramentas](ferramentas/index.qmd){.ld-cta .ld-cta--primary}
@@ -76,24 +78,22 @@ O LabDados é um laboratório da **FGV Direito SP** que constrói ferramentas, c
 ```{=html}
 <div class="ld-hero-mark">
   <svg class="ld-mark-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="LabDados">
-    <!-- 3x3 grid of "data" dots, top-left intentionally missing.
-         Each dot is large and rounded; a JS-driven diagonal wave of
-         brightness sweeps through them in a continuous loop. -->
+    <!-- 3x3 grid of soft "data" squares, top-left intentionally missing.
+         A JS-driven diagonal wave of light sweeps through them in loop. -->
     <g>
       <!-- row 0: skip col 0 -->
-      <rect class="dot" data-pos="0,1" x="75"  y="10"  width="50" height="50" rx="8"/>
-      <rect class="dot" data-pos="0,2" x="140" y="10"  width="50" height="50" rx="8"/>
+      <rect class="dot" data-pos="0,1" x="73"  y="8"   width="56" height="56" rx="4"/>
+      <rect class="dot" data-pos="0,2" x="136" y="8"   width="56" height="56" rx="4"/>
       <!-- row 1 -->
-      <rect class="dot" data-pos="1,0" x="10"  y="75"  width="50" height="50" rx="8"/>
-      <rect class="dot" data-pos="1,1" x="75"  y="75"  width="50" height="50" rx="8"/>
-      <rect class="dot" data-pos="1,2" x="140" y="75"  width="50" height="50" rx="8"/>
+      <rect class="dot" data-pos="1,0" x="8"   y="71"  width="56" height="56" rx="4"/>
+      <rect class="dot" data-pos="1,1" x="73"  y="71"  width="56" height="56" rx="4"/>
+      <rect class="dot" data-pos="1,2" x="136" y="71"  width="56" height="56" rx="4"/>
       <!-- row 2 -->
-      <rect class="dot" data-pos="2,0" x="10"  y="140" width="50" height="50" rx="8"/>
-      <rect class="dot" data-pos="2,1" x="75"  y="140" width="50" height="50" rx="8"/>
-      <rect class="dot" data-pos="2,2" x="140" y="140" width="50" height="50" rx="8"/>
+      <rect class="dot" data-pos="2,0" x="8"   y="134" width="56" height="56" rx="4"/>
+      <rect class="dot" data-pos="2,1" x="73"  y="134" width="56" height="56" rx="4"/>
+      <rect class="dot" data-pos="2,2" x="136" y="134" width="56" height="56" rx="4"/>
     </g>
   </svg>
-  <div class="ld-hero-wordmark">Lab<span>Dados</span></div>
 </div>
 ```
 :::
