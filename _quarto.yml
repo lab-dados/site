@@ -52,7 +52,7 @@ website:
       - icon: github
         href: https://github.com/lab-dados
       - icon: envelope
-        href: mailto:labdados@fgv.br
+        href: mailto:labdados.direitosp@fgv.br
 
 format:
   html:

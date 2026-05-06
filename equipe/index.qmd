@@ -17,4 +17,4 @@ bolsistas, colaboradores e parceiros institucionais.
 
 Vagas e processos seletivos são divulgados nas issues do
 [`lab-dados/adm`](https://github.com/lab-dados/adm/issues) e no blog.
-Para colaborações pontuais, mande e-mail para **labdados@fgv.br**.
+Para colaborações pontuais, mande e-mail para **labdados.direitosp@fgv.br**.

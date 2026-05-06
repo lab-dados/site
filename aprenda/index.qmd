@@ -19,7 +19,7 @@ Em breve, agenda integrada com Google Calendar.
 
 ## Quer trazer um curso para a sua instituição?
 
-Mande e-mail para **labdados@fgv.br**. Costumamos oferecer:
+Mande e-mail para **labdados.direitosp@fgv.br**. Costumamos oferecer:
 
 - Introdução a programação aplicada à pesquisa em direito (R + Python)
 - Oficina de raspagem de dados judiciais com `juscraper`

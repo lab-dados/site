@@ -36,7 +36,7 @@ Nosso trabalho é mudar isso, peça por peça, em código aberto.
 
 ## Contato
 
-- **E-mail:** `labdados@fgv.br`
+- **E-mail:** `labdados.direitosp@fgv.br`
 - **GitHub:** [github.com/lab-dados](https://github.com/lab-dados)
 - **Endereço:** FGV Direito SP — Rua Rocha, 233 · Bela Vista · São Paulo · SP
 
