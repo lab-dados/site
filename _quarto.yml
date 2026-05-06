@@ -42,6 +42,10 @@ website:
       - icon: github
         href: https://github.com/lab-dados
         aria-label: GitHub do LabDados
+      - icon: substack
+        href: https://labdados.substack.com/
+        target: _blank
+        aria-label: Blog no Substack
 
   page-footer:
     border: false

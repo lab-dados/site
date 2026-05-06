@@ -20,41 +20,30 @@ include-after-body:
       const maxPhase = Math.max(...phased.map(p => p.phase));
       const cycle = (maxPhase + 4) * 220; // ms
 
-      const stepMs = 380;
-      const cycleMs = (maxPhase + 4) * stepMs;
+      // Smooth, continuous wave: brightness is a bell curve in phase
+      // distance, color/alpha interpolated per-frame so there is no
+      // discrete on/off step.
+      const baseR = 58, baseG = 120, baseB = 176;     // var(--ld-blue)
+      const peakR = 255, peakG = 255, peakB = 255;    // near-white shine
+      const baseA = 0.30, peakA = 0.92;
+      const sigma = 1.0;                              // wave width
+      const stepMs = 520;
+      const cycleMs = (maxPhase + 5) * stepMs;
       let start = performance.now();
       function tick(now) {
         const t = ((now - start) % cycleMs) / stepMs;
         phased.forEach(({ el, phase }) => {
-          const d = Math.abs(t - phase);
-          el.classList.toggle('shine', d < 0.7);
+          const d = (t - phase) / sigma;
+          const w = Math.exp(-d * d);                 // smooth gaussian
+          const r = Math.round(baseR + (peakR - baseR) * w);
+          const g = Math.round(baseG + (peakG - baseG) * w);
+          const b = Math.round(baseB + (peakB - baseB) * w);
+          const a = baseA + (peakA - baseA) * w;
+          el.setAttribute('fill', `rgba(${r},${g},${b},${a.toFixed(3)})`);
         });
         requestAnimationFrame(tick);
       }
       requestAnimationFrame(tick);
-
-      // Hover bonus: light up the closest dot to the cursor.
-      const svg = document.querySelector('.ld-mark-svg');
-      if (svg) {
-        svg.addEventListener('pointermove', (ev) => {
-          const r = svg.getBoundingClientRect();
-          const x = ev.clientX - r.left;
-          const y = ev.clientY - r.top;
-          let closest = null, best = Infinity;
-          dots.forEach(d => {
-            const b = d.getBoundingClientRect();
-            const cx = b.left - r.left + b.width / 2;
-            const cy = b.top - r.top + b.height / 2;
-            const dist = (x - cx) ** 2 + (y - cy) ** 2;
-            if (dist < best) { best = dist; closest = d; }
-          });
-          dots.forEach(d => d.classList.remove('hover'));
-          if (closest && best < 6000) closest.classList.add('shine');
-        });
-        svg.addEventListener('pointerleave', () => {
-          dots.forEach(d => d.classList.remove('hover'));
-        });
-      }
     })();
     </script>
 ---
@@ -63,12 +52,10 @@ include-after-body:
 ::: {.container-page}
 ::: {.ld-split}
 ::: {}
-[Em construção · v0.1]{.ld-eyebrow}
-
 # Pesquisa empírica em direito **com ciência aberta**
 
 ::: {.lead}
-Somos um núcleo de pesquisa empírica da **FGV Direito SP**. Investigamos o sistema de justiça brasileiro com dados, incluindo o uso e o impacto da inteligência artificial no direito. Também desenvolvemos ferramentas e cursos para apoiar quem faz pesquisa empírica.
+O **LabDados** é um núcleo de pesquisa empírica da **FGV Direito SP**. Investigamos o sistema de justiça brasileiro com dados, incluindo o uso e o impacto da inteligência artificial no direito. Também desenvolvemos ferramentas e cursos para apoiar quem faz pesquisa empírica.
 :::
 
 [Ver ferramentas](ferramentas/index.qmd){.ld-cta .ld-cta--primary}
@@ -77,21 +64,22 @@ Somos um núcleo de pesquisa empírica da **FGV Direito SP**. Investigamos o sis
 
 ```{=html}
 <div class="ld-hero-mark">
-  <svg class="ld-mark-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="LabDados">
-    <!-- 3x3 grid of soft "data" squares, top-left intentionally missing.
-         A JS-driven diagonal wave of light sweeps through them in loop. -->
+  <svg class="ld-mark-svg" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="LabDados">
+    <!-- 3x3 grid of square "data" cells, top-left intentionally missing.
+         Squares are 56x56 with 32px gutter. A JS-driven Gaussian wave of
+         light sweeps through them with continuous color interpolation. -->
     <g>
       <!-- row 0: skip col 0 -->
-      <rect class="dot" data-pos="0,1" x="73"  y="8"   width="56" height="56" rx="4"/>
-      <rect class="dot" data-pos="0,2" x="136" y="8"   width="56" height="56" rx="4"/>
+      <rect class="dot" data-pos="0,1" x="92"  y="4"   width="56" height="56"/>
+      <rect class="dot" data-pos="0,2" x="180" y="4"   width="56" height="56"/>
       <!-- row 1 -->
-      <rect class="dot" data-pos="1,0" x="8"   y="71"  width="56" height="56" rx="4"/>
-      <rect class="dot" data-pos="1,1" x="73"  y="71"  width="56" height="56" rx="4"/>
-      <rect class="dot" data-pos="1,2" x="136" y="71"  width="56" height="56" rx="4"/>
+      <rect class="dot" data-pos="1,0" x="4"   y="92"  width="56" height="56"/>
+      <rect class="dot" data-pos="1,1" x="92"  y="92"  width="56" height="56"/>
+      <rect class="dot" data-pos="1,2" x="180" y="92"  width="56" height="56"/>
       <!-- row 2 -->
-      <rect class="dot" data-pos="2,0" x="8"   y="134" width="56" height="56" rx="4"/>
-      <rect class="dot" data-pos="2,1" x="73"  y="134" width="56" height="56" rx="4"/>
-      <rect class="dot" data-pos="2,2" x="136" y="134" width="56" height="56" rx="4"/>
+      <rect class="dot" data-pos="2,0" x="4"   y="180" width="56" height="56"/>
+      <rect class="dot" data-pos="2,1" x="92"  y="180" width="56" height="56"/>
+      <rect class="dot" data-pos="2,2" x="180" y="180" width="56" height="56"/>
     </g>
   </svg>
 </div>
