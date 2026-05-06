@@ -31,14 +31,13 @@ do bloco de código no hero (`index.qmd`, ~10 linhas).
 labdados-site/
 ├── _quarto.yml              # config do site, navbar, theme
 ├── index.qmd                # home
-├── ferramentas/index.qmd    # seções
+├── escritorio/index.qmd     # seções
+├── ferramentas/index.qmd
+├── dados/index.qmd
 ├── pesquisa/index.qmd
 ├── aprenda/index.qmd
-├── equipe/index.qmd
-├── sobre/index.qmd
-├── blog/
-│   ├── index.qmd            # listing
-│   └── posts/<slug>/index.qmd
+├── sobre/index.qmd          # inclui equipe via partial
+# Blog não tem página local — link no navbar abre Substack em nova aba.
 ├── _data/                   # YAML editado por humanos
 │   ├── equipe.yml
 │   ├── ferramentas.yml
@@ -118,18 +117,12 @@ uv run python tools/build_data.py
 
 ## Conteúdo dinâmico
 
-### Blog (Substack RSS)
+### Blog (Substack)
 
-O blog vive no Substack — não temos posts locais. `tools/build_data.py`
-busca o feed RSS da publicação quando a env var `LABDADOS_SUBSTACK_URL`
-estiver setada (ex.: `https://labdados.substack.com`) e gera
-`_partials/blog.html` com os 5 posts mais recentes. As páginas
-`blog/index.qmd` e a home incluem esse partial.
-
-Sem dependência externa: parser é `xml.etree.ElementTree` da stdlib.
-
-Para evitar que o site fique desatualizado quando ninguém der push, o
-workflow tem um cron diário (06:00 UTC) que re-renderiza e republica.
+O blog vive no Substack <https://labdados.substack.com>. O item "Blog ↗"
+do navbar é um link externo que abre em nova aba. Não há página de blog
+neste repositório, nem ingestão de RSS — o Substack já cuida da
+distribuição por e-mail.
 
 ### Partials a partir de YAML
 
@@ -166,9 +159,6 @@ Para adicionar uma nova seção orientada a YAML:
 Variáveis de ambiente injetadas no step de render (todas opcionais; se
 ausentes, o script usa os YAMLs versionados):
 
-- `LABDADOS_SUBSTACK_URL` — URL da publicação no Substack (configurar como
-  *variable*, não secret, em **Settings → Secrets and variables → Actions
-  → Variables**).
 - `LABDADOS_SHEETS_CSV_EQUIPE`
 - `LABDADOS_SHEETS_CSV_FERRAMENTAS`
 - `LABDADOS_SHEETS_CSV_PESQUISAS`
@@ -224,10 +214,9 @@ Não há nada específico do LabDados no código — só nos dados e no logo.
 ## Roadmap técnico curto
 
 - [ ] Domínio próprio + CNAME.
-- [ ] Setar `LABDADOS_SUBSTACK_URL` quando a publicação estiver criada.
 - [ ] Embed da agenda Google Calendar em `aprenda/`.
 - [ ] Página `/template/` com instruções para outros laboratórios.
 
 ## Licença
 
-Código sob **MIT**, conteúdo sob **CC BY 4.0**.
+Conteúdo sob **CC BY 4.0**.

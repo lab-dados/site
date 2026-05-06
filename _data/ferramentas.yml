@@ -1,6 +1,6 @@
 # Ferramentas mantidas ou apoiadas pelo LabDados.
-# Categorias usadas: pacote, sdk, skill, dados, servico.
-# Status sugeridos: estavel, beta, alpha, experimental.
+# Categoria: pacote, skill, dados.
+# Status: estavel, beta, alpha, experimental.
 
 - nome: "juscraper"
   categoria: "pacote"
@@ -20,42 +20,20 @@
   docs: "https://bdcdo.github.io/dataframeit/"
   pip: "dataframeit"
 
-- nome: "labdados (SDK)"
-  categoria: "sdk"
+- nome: "labdados"
+  categoria: "pacote"
   status: "beta"
-  descricao: "SDK oficial do escritório de apoio: OCR, transcrição, estruturação com LLMs e análise de viabilidade. Modos nuvem e local."
+  descricao: "SDK do escritório de apoio. OCR, transcrição, estruturação com LLMs e análise de viabilidade de raspagem — em modo nuvem ou local."
   linguagem: "Python"
   repo: "https://github.com/lab-dados/labdados-sdk"
   pip: "labdados"
 
-- nome: "labdados-core"
-  categoria: "pacote"
-  status: "beta"
-  descricao: "Núcleo Python compartilhado entre o backend do escritório de apoio e o SDK — contracts, viabilidade, OCR e estruturação."
-  linguagem: "Python"
-  repo: "https://github.com/lab-dados/labdados-core"
-  pip: "labdados-core"
-
-- nome: "Marketplace de skills"
+- nome: "labdados-skills"
   categoria: "skill"
   status: "estavel"
-  descricao: "Plugins de Claude Code para pesquisa empírica em direito: juscraper, dataframeit, openalex, raspe, scrum-master, explainer-video."
+  descricao: "Marketplace de skills do Claude Code para pesquisa empírica em direito: juscraper, dataframeit, openalex, raspe, scrum-master."
   linguagem: "Markdown"
   repo: "https://github.com/lab-dados/labdados-skills"
-
-- nome: "Escritório de apoio"
-  categoria: "servico"
-  status: "beta"
-  descricao: "Portal web com OCR, transcrição, estruturação por LLMs e anonimização sob demanda. Roda em Azure Brazil South."
-  linguagem: "Python + React"
-  repo: "https://github.com/lab-dados/escritorio-servicos"
-  link: "https://labdados-frontend.livelydesert-3e3e3dd8.brazilsouth.azurecontainerapps.io"
-
-- nome: "Portal de dados (Dataverse)"
-  categoria: "dados"
-  status: "beta"
-  descricao: "Bases publicadas pelo laboratório, com DOI e licença aberta. Em construção — link a confirmar."
-  link: "https://github.com/lab-dados"
 
 # - nome: "Sua ferramenta"
 #   categoria: "pacote"

@@ -1,22 +1,32 @@
-# Materiais de cursos, oficinas e o livro em construção.
+# Materiais de cursos, oficinas e o livro do laboratório.
 # Tipo: curso, oficina, livro, palestra.
+
+- titulo: "Ciência de Dados Aplicada ao Direito"
+  tipo: "livro"
+  ano: 2026
+  descricao: "Livro aberto, em construção, com fundamentos de estatística e ciência de dados em Python aplicados a problemas jurídicos. Material da disciplina homônima do Insper, em preparação para uso fora da sala de aula."
+  link: "https://jtrecenti.github.io/cdad-book/"
 
 - titulo: "Introdução à programação aplicada à pesquisa em direito"
   tipo: "curso"
   ano: 2025
-  descricao: "Curso oferecido na FGV Direito SP. Materiais em Quarto, código em R e Python."
+  descricao: "Curso oferecido na FGV Direito SP. Materiais em Quarto, Python."
   link: "https://github.com/lab-dados"
 
-- titulo: "Livro: Pesquisa empírica em direito com código"
-  tipo: "livro"
-  ano: 2026
-  descricao: "Livro aberto, em construção, sobre como conduzir pesquisa empírica em direito usando R e Python."
-  link: "https://github.com/lab-dados"
-
-- titulo: "Oficina Atlas.ti — versão de uma tarde"
+- titulo: "Workshop de raspagem judicial com `juscraper`"
   tipo: "oficina"
   ano: 2026
-  descricao: "Introdução prática ao Atlas.ti para análise qualitativa, em formato compacto de uma tarde."
+  descricao: "Como coletar acórdãos e processos dos tribunais brasileiros usando o pacote do laboratório."
+
+- titulo: "Estruturação de textos jurídicos com LLMs"
+  tipo: "oficina"
+  ano: 2026
+  descricao: "Como extrair informação estruturada de ementas e decisões usando `dataframeit` + Pydantic."
+
+- titulo: "Atlas.ti em uma tarde"
+  tipo: "oficina"
+  ano: 2026
+  descricao: "Introdução prática ao Atlas.ti para análise qualitativa, em formato compacto."
 
 # - titulo: "Seu curso ou oficina"
 #   tipo: "oficina"

@@ -1,0 +1,110 @@
+---
+title: "Escritório de apoio"
+description: "Processamento de PDFs, áudio e textos sob demanda para pesquisas empíricas em direito."
+toc: true
+toc-location: right
+toc-title: "Nesta página"
+---
+
+::: {.lead}
+O **escritório de apoio** é um serviço do LabDados que tira da frente do pesquisador o trabalho de extrair texto de PDF, transcrever áudios e estruturar informação em escala. Você manda os arquivos, recebe os resultados.
+:::
+
+```{=html}
+<a class="ld-callout" href="https://labdados-frontend.livelydesert-3e3e3dd8.brazilsouth.azurecontainerapps.io" target="_blank" rel="noopener">
+  <div>
+    <h3>Acessar o portal do escritório</h3>
+    <p>Peça uma API key, abra um pedido pelo wizard e acompanhe o status. Em breve, em domínio próprio do laboratório.</p>
+  </div>
+  <span class="ld-cta">Abrir portal →</span>
+</a>
+```
+
+## O que o escritório faz
+
+::: {.ld-grid}
+::: {.ld-card}
+[serviço]{.ld-card__tag}
+
+### OCR de PDFs
+Extração de texto com PyMuPDF + Tesseract, ou PaddleOCR em GPU para documentos mais difíceis. Saída em `.txt` ou `.md`.
+:::
+
+::: {.ld-card}
+[serviço]{.ld-card__tag}
+
+### Transcrição e diarização de áudio
+Whisper / WhisperX + pyannote.audio para identificar quem fala em audiências, entrevistas e reuniões.
+:::
+
+::: {.ld-card}
+[serviço]{.ld-card__tag}
+
+### Estruturação com LLMs
+Pipeline com Azure OpenAI (gpt-4.1-mini) para extrair campos definidos por schema de ementas, decisões e contratos.
+:::
+
+::: {.ld-card}
+[serviço]{.ld-card__tag}
+
+### Análise de viabilidade
+Antes de uma raspagem grande, estima quantos processos atendem ao seu recorte usando Datajud e `juscraper`. Devolve um PDF com o veredito.
+:::
+:::
+
+## Como usar
+
+Você tem três caminhos, com a mesma chamada de função:
+
+### 1. Nuvem do escritório
+
+Para o caso comum: peça uma **API key** no portal e use o SDK Python.
+
+```python
+import labdados
+
+labdados.ocr(
+    arquivos="meus_pdfs/",
+    api_key="sk_lab_...",
+    saida="resultados/",
+)
+```
+
+Limites e custos ficam vinculados à sua API key. Os arquivos são processados nos servidores do escritório (Azure Brazil South) e descartados em **72h**.
+
+### 2. Modo local
+
+Quando você tem requisitos de sigilo absoluto ou já tem máquina com GPU. O processamento roda na sua máquina; o SDK só orquestra.
+
+```python
+import labdados
+labdados.ocr(arquivos="meus_pdfs/", local=True, saida="resultados/")
+```
+
+### 3. Backend local via Docker
+
+Para reproduzir o ambiente do escritório no seu computador (debug ou desenvolvimento).
+
+```python
+import os
+os.environ["LABDADOS_BASE_URL"] = "http://localhost:8000"
+labdados.ocr(arquivos="meus_pdfs/", api_key="sk_lab_...", saida="resultados/")
+```
+
+Detalhes em [`labdados-sdk`](https://github.com/lab-dados/labdados-sdk).
+
+## Privacidade e residência de dados
+
+- **Brazil South.** Todo recurso que processa ou armazena dados de pesquisa roda em `brazilsouth`.
+- **Retenção 72h.** Documentos têm expiração automática via Blob Lifecycle Management.
+- **Detector PII como camada, não garantia.** O serviço de anonimização usa modelos `openai/privacy-filter` e `pierreguillou/ner-bert-base-cased-pt-lenerbr` em uma abordagem de privacy-by-design — **não substitui revisão humana** para divulgação pública.
+
+## Pedir uma API key
+
+Acesse o [portal do escritório](https://labdados-frontend.livelydesert-3e3e3dd8.brazilsouth.azurecontainerapps.io) e siga o link **"Pedir API key"**. Você preenche um formulário curto, o admin do laboratório aprova, e o token chega por e-mail.
+
+## Código e arquitetura
+
+- Frontend e backend: [`lab-dados/escritorio-servicos`](https://github.com/lab-dados/escritorio-servicos)
+- SDK Python: [`lab-dados/labdados-sdk`](https://github.com/lab-dados/labdados-sdk)
+- Stack: FastAPI + PostgreSQL + Azure Container Apps (com GPU serverless T4 para transcrição). E-mail via Azure Communication Services.

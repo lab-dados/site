@@ -4,9 +4,6 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-  schedule:
-    # 06:00 UTC daily — re-render to pick up new Substack posts.
-    - cron: "0 6 * * *"
 
 permissions:
   contents: read
@@ -43,7 +40,6 @@ jobs:
 
       - name: Build content partials (idempotent — also runs as Quarto pre-render)
         env:
-          LABDADOS_SUBSTACK_URL: ${{ vars.LABDADOS_SUBSTACK_URL }}
           LABDADOS_SHEETS_CSV_EQUIPE:      ${{ secrets.LABDADOS_SHEETS_CSV_EQUIPE }}
           LABDADOS_SHEETS_CSV_FERRAMENTAS: ${{ secrets.LABDADOS_SHEETS_CSV_FERRAMENTAS }}
           LABDADOS_SHEETS_CSV_PESQUISAS:   ${{ secrets.LABDADOS_SHEETS_CSV_PESQUISAS }}
@@ -53,14 +49,9 @@ jobs:
 
       - name: Render site
         env:
-          # Substack URL of the LabDados publication. When set, the blog
-          # page and the home pull the latest posts via RSS.
-          # Configure as a repo *variable* (not secret) named LABDADOS_SUBSTACK_URL.
-          LABDADOS_SUBSTACK_URL: ${{ vars.LABDADOS_SUBSTACK_URL }}
-
-          # Optional Google Sheets sync — set these as repo secrets if you
-          # want non-programmers to maintain content via a published Sheet.
-          # The URLs must be "Publish to web" CSV exports.
+          # Optional Google Sheets sync — set as repo secrets if you want
+          # non-programmers to maintain content via a published Sheet.
+          # URLs must be "Publish to web" CSV exports.
           LABDADOS_SHEETS_CSV_EQUIPE:      ${{ secrets.LABDADOS_SHEETS_CSV_EQUIPE }}
           LABDADOS_SHEETS_CSV_FERRAMENTAS: ${{ secrets.LABDADOS_SHEETS_CSV_FERRAMENTAS }}
           LABDADOS_SHEETS_CSV_PESQUISAS:   ${{ secrets.LABDADOS_SHEETS_CSV_PESQUISAS }}

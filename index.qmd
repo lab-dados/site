@@ -1,5 +1,5 @@
 ---
-pagetitle: "LabDados — Pesquisa empírica em direito, com código aberto"
+pagetitle: "LabDados — Pesquisa empírica em direito, com ciência aberta"
 description: "Laboratório de Dados e Pesquisa Empírica em Direito da FGV Direito SP."
 page-layout: full
 toc: false
@@ -22,23 +22,25 @@ include-after-body:
 ::: {}
 [Em construção · v0.1]{.ld-eyebrow}
 
-# Pesquisa empírica em direito, **com código aberto**
+# Pesquisa empírica em direito, **com ciência aberta**
 
 ::: {.lead}
-O LabDados é um laboratório da **FGV Direito SP** que constrói ferramentas, conduz pesquisas e ensina pessoas a usar dados para entender o sistema de justiça brasileiro.
+O LabDados é um laboratório da **FGV Direito SP** que constrói ferramentas, conduz pesquisas e ensina pessoas a usar dados para entender o sistema de justiça brasileiro. Tudo que produzimos — código, dados, métodos — é publicado abertamente.
 :::
 
 [Ver ferramentas](ferramentas/index.qmd){.ld-cta .ld-cta--primary}
-[Conhecer a equipe](equipe/index.qmd){.ld-cta .ld-cta--ghost}
+[Sobre o laboratório](sobre/index.qmd){.ld-cta .ld-cta--ghost}
 :::
 
 ::: {}
 ::: {.ld-codecard data-ld-rotate='[
-  "<span class=\"c\"># raspar acórdãos do TJSP em duas linhas</span><br><span class=\"k\">import</span> <span class=\"v\">juscraper</span> <span class=\"k\">as</span> <span class=\"v\">jus</span><br><span class=\"v\">tjsp</span> = <span class=\"v\">jus</span>.<span class=\"fn\">scraper</span>(<span class=\"s\">\"tjsp\"</span>)<br><span class=\"v\">df</span>   = <span class=\"v\">tjsp</span>.<span class=\"fn\">cjpg</span>(<span class=\"s\">\"golpe do pix\"</span>, <span class=\"v\">paginas</span>=<span class=\"v\">range</span>(<span class=\"s\">1</span>,<span class=\"s\">4</span>))",
-  "<span class=\"c\"># enriquecer um DataFrame com LLMs</span><br><span class=\"k\">from</span> <span class=\"v\">dataframeit</span> <span class=\"k\">import</span> <span class=\"fn\">dataframeit</span><br><span class=\"v\">out</span> = <span class=\"fn\">dataframeit</span>(<span class=\"v\">df</span>, <span class=\"v\">Sentimento</span>,<br>&nbsp;&nbsp;<span class=\"s\">\"Classifique a ementa.\"</span>)",
-  "<span class=\"c\"># OCR + estruturação na nuvem do escritório</span><br><span class=\"k\">import</span> <span class=\"v\">labdados</span><br><span class=\"v\">labdados</span>.<span class=\"fn\">ocr</span>(<span class=\"v\">arquivos</span>=<span class=\"s\">\"pdfs/\"</span>,<br>&nbsp;&nbsp;<span class=\"v\">api_key</span>=<span class=\"s\">\"sk_lab_…\"</span>,<br>&nbsp;&nbsp;<span class=\"v\">saida</span>=<span class=\"s\">\"out/\"</span>)"
+  "<span class=\"c\"># 1. acórdãos sobre judicialização da saúde no TJSP</span><br><span class=\"k\">import</span> <span class=\"v\">juscraper</span> <span class=\"k\">as</span> <span class=\"v\">jus</span><br><span class=\"v\">tjsp</span> = <span class=\"v\">jus</span>.<span class=\"fn\">scraper</span>(<span class=\"s\">\"tjsp\"</span>)<br><span class=\"v\">df</span>   = <span class=\"v\">tjsp</span>.<span class=\"fn\">cjsg</span>(<span class=\"s\">\"plano de saúde\"</span>, <span class=\"v\">paginas</span>=<span class=\"v\">range</span>(<span class=\"s\">1</span>,<span class=\"s\">10</span>))",
+  "<span class=\"c\"># 2. estruturar ementas com LLM e Pydantic</span><br><span class=\"k\">from</span> <span class=\"v\">dataframeit</span> <span class=\"k\">import</span> <span class=\"fn\">dataframeit</span><br><span class=\"v\">out</span> = <span class=\"fn\">dataframeit</span>(<span class=\"v\">df</span>, <span class=\"v\">DecisaoSaude</span>,<br>&nbsp;&nbsp;<span class=\"s\">\"Extraia partes, pedido e desfecho.\"</span>)",
+  "<span class=\"c\"># 3. OCR de PDFs na nuvem do escritório</span><br><span class=\"k\">import</span> <span class=\"v\">labdados</span><br><span class=\"v\">labdados</span>.<span class=\"fn\">ocr</span>(<span class=\"v\">arquivos</span>=<span class=\"s\">\"pdfs/\"</span>, <span class=\"v\">api_key</span>=<span class=\"s\">\"sk_lab_…\"</span>)",
+  "<span class=\"c\"># 4. transcrição com diarização (audiência, entrevista)</span><br><span class=\"k\">import</span> <span class=\"v\">labdados</span><br><span class=\"v\">labdados</span>.<span class=\"fn\">transcricao</span>(<span class=\"v\">arquivos</span>=<span class=\"s\">\"audiencia.mp3\"</span>,<br>&nbsp;&nbsp;<span class=\"v\">api_key</span>=<span class=\"s\">\"sk_lab_…\"</span>, <span class=\"v\">diarizacao</span>=<span class=\"v\">True</span>)",
+  "<span class=\"c\"># 5. viabilidade — quantos processos antes de raspar</span><br><span class=\"k\">import</span> <span class=\"v\">labdados</span><br><span class=\"v\">labdados</span>.<span class=\"fn\">analise_viabilidade</span>(<span class=\"v\">tribunais</span>=[<span class=\"s\">\"tjsp\"</span>],<br>&nbsp;&nbsp;<span class=\"v\">recorte</span>=(<span class=\"s\">\"2020-01-01\"</span>, <span class=\"s\">\"2024-12-31\"</span>))"
 ]'}
-<span class="c"># raspar acórdãos do TJSP em duas linhas</span><br><span class="k">import</span> <span class="v">juscraper</span> <span class="k">as</span> <span class="v">jus</span><br><span class="v">tjsp</span> = <span class="v">jus</span>.<span class="fn">scraper</span>(<span class="s">"tjsp"</span>)<br><span class="v">df</span>   = <span class="v">tjsp</span>.<span class="fn">cjpg</span>(<span class="s">"golpe do pix"</span>, <span class="v">paginas</span>=<span class="v">range</span>(<span class="s">1</span>,<span class="s">4</span>))
+<span class="c"># 1. acórdãos sobre judicialização da saúde no TJSP</span><br><span class="k">import</span> <span class="v">juscraper</span> <span class="k">as</span> <span class="v">jus</span><br><span class="v">tjsp</span> = <span class="v">jus</span>.<span class="fn">scraper</span>(<span class="s">"tjsp"</span>)<br><span class="v">df</span>   = <span class="v">tjsp</span>.<span class="fn">cjsg</span>(<span class="s">"plano de saúde"</span>, <span class="v">paginas</span>=<span class="v">range</span>(<span class="s">1</span>,<span class="s">10</span>))
 :::
 :::
 :::
@@ -48,6 +50,15 @@ O LabDados é um laboratório da **FGV Direito SP** que constrói ferramentas, c
 ::: {.container-page}
 
 ::: {.ld-stats}
+::: {.ld-stat}
+::: {.ld-stat__num}
+2020
+:::
+::: {.ld-stat__label}
+ano de fundação
+:::
+:::
+
 ::: {.ld-stat}
 ::: {.ld-stat__num}
 22
@@ -71,16 +82,7 @@ serviços no escritório de apoio
 8
 :::
 ::: {.ld-stat__label}
-skills no marketplace LabDados
-:::
-:::
-
-::: {.ld-stat}
-::: {.ld-stat__num}
-2024
-:::
-::: {.ld-stat__label}
-ano de fundação
+skills no marketplace
 :::
 :::
 :::
@@ -94,51 +96,52 @@ Três frentes que se reforçam: **ferramentas** que retiram fricção da pesquis
 
 ```{=html}
 <div class="ld-grid">
-  <a class="ld-card" href="ferramentas/">
+  <div class="ld-card">
     <span class="ld-card__tag">ferramentas</span>
-    <h3>Pacotes Python e dados abertos</h3>
-    <p>Bibliotecas para coletar, estruturar e analisar dados do Judiciário brasileiro — incluindo <code>juscraper</code>, <code>dataframeit</code> e o SDK do escritório de apoio.</p>
-    <div class="ld-card__meta"><code>juscraper</code> <code>dataframeit</code> <code>labdados</code></div>
-  </a>
-  <a class="ld-card" href="pesquisa/">
+    <h3><a class="ld-card__link" href="ferramentas/">Pacotes Python e dados abertos</a></h3>
+    <p>Bibliotecas para coletar, estruturar e analisar dados do Judiciário brasileiro — incluindo <code>juscraper</code>, <code>dataframeit</code> e o SDK <code>labdados</code> do escritório de apoio.</p>
+  </div>
+  <div class="ld-card">
     <span class="ld-card__tag">pesquisa</span>
-    <h3>Pesquisas em andamento</h3>
+    <h3><a class="ld-card__link" href="pesquisa/">Pesquisas em andamento</a></h3>
     <p>Projetos com parceiros institucionais e sociedade civil — judicialização da saúde, jurisprudência do TCU, IA na pesquisa em direito.</p>
-    <div class="ld-card__meta"><span class="ld-pill">CCD-Saúde</span> <span class="ld-pill">Datajud</span> <span class="ld-pill">TCU</span></div>
-  </a>
-  <a class="ld-card" href="aprenda/">
+  </div>
+  <div class="ld-card">
     <span class="ld-card__tag">aprenda</span>
-    <h3>Cursos, livro e workshops</h3>
+    <h3><a class="ld-card__link" href="aprenda/">Cursos, livro e workshops</a></h3>
     <p>Materiais abertos de programação aplicada à pesquisa em direito, agenda de workshops e o livro em construção.</p>
-    <div class="ld-card__meta"><span class="ld-pill">R + Python</span> <span class="ld-pill">aulas gravadas</span></div>
-  </a>
+  </div>
 </div>
 ```
 
 :::
 
 ::: {.ld-section}
-## Manifesto curto
+## Escritório de apoio
+
+```{=html}
+<a class="ld-callout" href="escritorio/">
+  <div>
+    <h3>Precisa de OCR, transcrição ou estruturação de textos para uma pesquisa?</h3>
+    <p>O escritório de apoio do LabDados processa PDFs, áudio e textos sob demanda. Modos nuvem e local, dados em Brazil South com retenção de 72h.</p>
+  </div>
+  <span class="ld-cta">Conhecer o escritório →</span>
+</a>
+```
+:::
+
+::: {.ld-section}
+## Manifesto
 
 ::: {.ld-manifesto}
 Pesquisa empírica em direito ainda é cara, manual e fechada. Nosso trabalho é mudar isso.
-Cada raspador, cada pacote, cada curso e cada artigo do LabDados é publicado **sob licença aberta** e versionado em GitHub.
+Cada raspador, cada pacote, cada curso e cada artigo do LabDados é publicado em código aberto e versionado em GitHub.
 :::
 
 [Leia mais sobre como nos organizamos](sobre/index.qmd){.ld-cta .ld-cta--ghost}
 :::
 
-::: {.ld-section}
-## No blog
-
-::: {.lead}
-Notas curtas sobre o que estamos construindo. O blog é publicado no Substack.
-:::
-
-{{< include /_partials/blog.html >}}
-:::
-:::
-
 ```{=html}
 <div class="container-page" style="padding-block: 3rem;"></div>
 ```
+:::

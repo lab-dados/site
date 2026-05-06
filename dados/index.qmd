@@ -1,0 +1,63 @@
+---
+title: "Dados"
+description: "Bases publicadas pelo LabDados e como conseguir acesso a dados restritos."
+toc: true
+toc-location: right
+toc-title: "Nesta página"
+---
+
+::: {.lead}
+O LabDados segue a filosofia de **dados abertos**: tudo que pode ser publicado sem violar privacidade ou termos de fornecedores fica em repositório público, com DOI e licença explícita.
+:::
+
+## O que entendemos por "dados abertos"
+
+Adotamos a definição da [Open Knowledge Foundation](https://opendefinition.org):
+
+::: {.ld-manifesto}
+Conhecimento é aberto se qualquer pessoa for livre para acessar, usar, modificar e compartilhar — sujeito, no máximo, a medidas que preservem proveniência e abertura.
+:::
+
+Na prática, isso significa que cada base do laboratório é publicada com:
+
+- **Licença explícita** (CC BY 4.0 por padrão).
+- **DOI persistente** via Dataverse da FGV.
+- **Documentação** dos campos, métodos de coleta e versão.
+- **Código de coleta e tratamento** versionado em GitHub.
+
+## Onde estão os dados
+
+::: {.ld-grid}
+::: {.ld-card}
+[repositório]{.ld-card__tag}
+
+### Dataverse FGV — coleção Direito SP
+Bases publicadas pela FGV Direito SP, incluindo as do LabDados. Cada base tem DOI e citação pronta para artigo.
+
+[Abrir Dataverse →](https://dataverse.fgv.br/dataverse/direitosp){target="_blank"}
+:::
+
+::: {.ld-card}
+[ferramenta]{.ld-card__tag}
+
+### Coleta com `juscraper`
+Pacote Python para coletar do zero acórdãos e processos dos tribunais brasileiros. 22 TJs estaduais + Datajud + JusBR.
+
+[Ver no PyPI →](https://pypi.org/project/juscraper/){target="_blank"}
+:::
+:::
+
+## Dados restritos? Use o escritório de apoio
+
+Algumas pesquisas precisam de bases que envolvem dados pessoais ou termos de fornecedor que impedem republicação. Para esses casos, o **[escritório de apoio](../escritorio/)** processa os arquivos para você sem que você precise lidar com a infraestrutura — e os arquivos são descartados em 72h.
+
+## Quero publicar uma base no Dataverse do laboratório
+
+Mande e-mail para `labdados.direitosp [at] fgv [.] br` com:
+
+1. Nome e descrição da base (1–2 parágrafos).
+2. Fonte e método de coleta.
+3. Indicação se contém dados pessoais.
+4. Sugestão de licença (default CC BY 4.0).
+
+Confirmamos a publicação, geramos DOI e damos retorno para você citar no artigo.

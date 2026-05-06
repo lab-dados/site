@@ -23,18 +23,21 @@ website:
     pinned: true
     collapse-below: lg
     left:
+      - text: "Escritório de apoio"
+        href: escritorio/index.qmd
       - text: "Ferramentas"
         href: ferramentas/index.qmd
+      - text: "Dados"
+        href: dados/index.qmd
       - text: "Pesquisa"
         href: pesquisa/index.qmd
       - text: "Aprenda"
         href: aprenda/index.qmd
-      - text: "Blog"
-        href: blog/index.qmd
-      - text: "Equipe"
-        href: equipe/index.qmd
       - text: "Sobre"
         href: sobre/index.qmd
+      - text: "Blog ↗"
+        href: https://labdados.substack.com/
+        target: _blank
     right:
       - icon: github
         href: https://github.com/lab-dados
@@ -44,15 +47,16 @@ website:
     border: false
     left: |
       **LabDados** — Laboratório de Dados e Pesquisa Empírica em Direito<br>
-      FGV Direito SP · Rua Rocha, 233 · São Paulo
+      FGV Direito SP · Rua Dr. Plínio Barreto, 365 · Bela Vista · São Paulo
     center: |
       Feito em [Quarto](https://quarto.org). Conteúdo sob
-      [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), código sob [MIT](https://opensource.org/licenses/MIT).
+      [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
     right:
       - icon: github
         href: https://github.com/lab-dados
-      - icon: envelope
-        href: mailto:labdados.direitosp@fgv.br
+      - icon: substack
+        href: https://labdados.substack.com/
+        target: _blank
 
 format:
   html:

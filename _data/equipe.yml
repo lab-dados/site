@@ -1,20 +1,45 @@
 # Equipe do LabDados.
 # Para adicionar uma pessoa, copie um bloco e edite os campos.
-# Os campos `foto`, `lattes`, `orcid` e `bluesky` são opcionais.
-# `papel` é livre — sugestões: "Coordenação", "Pesquisador(a)", "Bolsista", "Colaborador(a)".
+# Campos `foto`, `lattes`, `orcid`, `site`, `linkedin`, `email` são opcionais.
+
+- nome: "Daniel Wei Liang Wang"
+  papel: "Professor associado"
+  bio: "Professor da FGV Direito SP. PhD em Direito pela LSE. Pesquisa judicialização da saúde, direitos humanos e bioética."
+  foto: "https://github.com/wangdanielwl.png"
+  github: "wangdanielwl"
+  site: "https://sites.google.com/view/danielweiliangwang"
+  lattes: "http://lattes.cnpq.br/4448586852846057"
+  email: "daniel.wang@fgv.br"
+  fgv: "https://direitosp.fgv.br/professor/daniel-wei-liang-wang"
 
 - nome: "Julio Trecenti"
-  papel: "Coordenação"
-  bio: "Estatístico, doutor pelo IME-USP. Coordena o LabDados, ensina ciência de dados no Insper e dirige a tecnologia da ABJ."
+  papel: "Coordenação técnica"
+  bio: "Estatístico, doutor pelo IME-USP. Mantém o `juscraper` e coordena as ferramentas do laboratório."
   foto: "https://github.com/jtrecenti.png"
   github: "jtrecenti"
-  linkedin: "jtrecenti"
-  email: "julio.trecenti@fgv.br"
   site: "https://jtrecenti.com"
+  email: "julio.trecenti@fgv.br"
+
+- nome: "Helena Hime Funari"
+  papel: "Pesquisadora"
+  bio: "Mestre em Ciência Política pela USP, graduada em Direito pela FDUSP, pós em Data Science pelo Insper. Pesquisa comportamento judicial e métodos qualitativos."
+  foto: "https://github.com/HelenaHime.png"
+  github: "HelenaHime"
+
+- nome: "Cláudia Hiromi Oshiro"
+  papel: "Pesquisadora"
+  bio: "Doutora em Administração Pública e Governo pela FGV. Pesquisa mercado de trabalho, educação e políticas públicas com métodos quantitativos."
+  fgv: "https://eaesp.fgv.br/pessoa/claudia-hiromi-oshiro"
+
+- nome: "Luiz Cláudio Pimenta Filho"
+  papel: "Pesquisador"
+  bio: "Mestre em Direito e Desenvolvimento pela FGV Direito SP, graduado em Direito pela USP. Pesquisa direito e economia política."
+  foto: "https://github.com/LuizPF42.png"
+  github: "LuizPF42"
 
 - nome: "Bruno Carvalho"
-  papel: "Pesquisador / Ferramentas"
-  bio: "Pesquisador no LabDados. Mantém o `dataframeit` e contribui com o ecossistema de skills para Claude Code."
+  papel: "Pesquisador"
+  bio: "Mantém o `dataframeit` e contribui com o ecossistema de skills para Claude Code do laboratório."
   foto: "https://github.com/bdcdo.png"
   github: "bdcdo"
 
@@ -24,3 +49,4 @@
 #   foto: "https://github.com/seu-usuario.png"
 #   github: "seu-usuario"
 #   linkedin: "seu-usuario"
+#   lattes: "http://lattes.cnpq.br/SEU-NUMERO"

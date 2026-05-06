@@ -224,13 +224,19 @@ h1 strong, h2 strong { color: var(--ld-green-700); font-weight: 700; }
   margin-top: 0.15rem;
 }
 
-// Card grid
+// Card grid — uses CSS auto-fill so partial rows align left, never leave
+// orphan slots in the middle.
 .ld-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.25rem;
   margin-block: 1.25rem;
+  align-items: stretch;
 }
+
+// Cards are <div>s, not <a>s — Pandoc breaks <a> wrapping block content.
+// We use a "stretched link" pattern so the whole card is clickable while
+// preserving nested links (docs, repo).
 .ld-card {
   background: #fff;
   border: 1px solid var(--ld-line);
@@ -240,7 +246,6 @@ h1 strong, h2 strong { color: var(--ld-green-700); font-weight: 700; }
   display: flex;
   flex-direction: column;
   gap: 0.55rem;
-  text-decoration: none;
   color: inherit;
   position: relative;
 }
@@ -248,9 +253,17 @@ h1 strong, h2 strong { color: var(--ld-green-700); font-weight: 700; }
   transform: translateY(-2px);
   border-color: var(--ld-navy);
   box-shadow: 0 18px 40px -22px rgba(10,31,68,0.35);
-  color: inherit;
 }
-.ld-card h3 { margin: 0; font-size: 1.15rem; font-weight: 600; color: var(--ld-navy); }
+.ld-card h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ld-navy);
+}
+.ld-card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
 .ld-card p  { margin: 0; color: var(--ld-mute); font-size: 0.95rem; }
 .ld-card__tag {
   font-family: $font-family-monospace;
@@ -275,6 +288,27 @@ h1 strong, h2 strong { color: var(--ld-green-700); font-weight: 700; }
   padding: 0.05rem 0.4rem;
   border-radius: 0.3rem;
   font-size: 0.78rem;
+}
+.ld-card__links {
+  font-size: 0.82rem;
+  color: var(--ld-mute);
+  padding-top: 0.25rem;
+  display: flex;
+  gap: 0.5rem;
+}
+.ld-card__links a {
+  color: var(--ld-navy);
+  text-decoration: none;
+  position: relative;
+  z-index: 2;
+}
+.ld-card__links a:hover { text-decoration: underline; }
+// Stretched link — covers the whole card.
+.ld-card__link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 
 // Section heading with rule
@@ -331,6 +365,63 @@ h1 strong, h2 strong { color: var(--ld-green-700); font-weight: 700; }
   font-size: 0.92rem;
 }
 .ld-person .links a { color: var(--ld-navy); }
+
+// Big call-out box (used for "Escritório de Apoio" entry points).
+.ld-callout {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.4fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 2rem 2.25rem;
+  margin-block: 1.5rem 2rem;
+  background: linear-gradient(135deg, var(--ld-navy) 0%, var(--ld-navy-700) 100%);
+  color: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  text-decoration: none;
+}
+.ld-callout::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(420px 220px at 100% 0%, rgba(0,163,122,0.32), transparent 70%),
+    radial-gradient(280px 160px at 0% 100%, rgba(0,163,122,0.18), transparent 70%);
+  pointer-events: none;
+}
+.ld-callout > * { position: relative; z-index: 1; }
+.ld-callout h3 {
+  margin: 0 0 0.4rem;
+  color: #fff;
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.ld-callout p {
+  margin: 0;
+  color: rgba(255,255,255,0.82);
+  font-size: 1rem;
+  max-width: 56ch;
+}
+.ld-callout .ld-cta {
+  background: var(--ld-green);
+  color: #fff;
+  border: none;
+  padding: 0.95rem 1.5rem;
+  font-size: 1.02rem;
+  white-space: nowrap;
+}
+.ld-callout .ld-cta:hover {
+  background: var(--ld-green-700);
+  color: #fff;
+}
+@media (max-width: 720px) {
+  .ld-callout {
+    grid-template-columns: 1fr;
+    padding: 1.6rem 1.5rem;
+  }
+}
 
 // Pills (categories, tags)
 .ld-pill {

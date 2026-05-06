@@ -14,7 +14,7 @@ da FGV Direito SP — <https://lab-dados.github.io/site>.
 Praticamente todo conteúdo do site fica em dois lugares:
 
 1. **Páginas de texto** — em `index.qmd` (home), e nas pastas
-   `sobre/`, `pesquisa/`, `aprenda/`, `ferramentas/`, `equipe/` e `blog/`.
+   `sobre/`, `pesquisa/`, `aprenda/`, `ferramentas/`, `dados/` e `escritorio/`.
    São arquivos `.qmd` (Markdown). Você edita o texto direto.
 
 2. **Listas de cartões** (equipe, ferramentas, pesquisas, cursos, parceiros)
@@ -110,25 +110,22 @@ Arquivo: [`_data/cursos.yml`](./_data/cursos.yml)
 
 ### Escrever um post de blog
 
-O blog do LabDados fica no **Substack**, não neste repositório. Para postar:
+O blog do LabDados fica no **Substack**: <https://labdados.substack.com>.
+O item "Blog ↗" do menu do site abre direto lá em nova aba — não há página
+de blog neste repositório.
 
-1. Vá para <https://labdados.substack.com> (ou o nome que escolhermos).
-2. Faça login com a conta institucional.
-3. Clique em **New post** e escreva direto no editor do Substack.
-4. Publique. Em até 24h o site puxa o post novo automaticamente (também
-   dá pra forçar agora indo em
-   [Actions → Render and deploy site → Run workflow](https://github.com/lab-dados/site/actions/workflows/publish.yml)).
+Para postar:
 
-> Por que Substack e não aqui? Distribuição por e-mail é grátis e funciona
-> melhor que reinventar a roda. O site puxa os 5 posts mais recentes via
-> RSS e mostra na home e na página `/blog/`.
+1. Faça login no Substack com a conta institucional (`labdados.direitosp@fgv.br`).
+2. Clique em **New post** e escreva direto no editor.
+3. Publique. O e-mail vai para os assinantes automaticamente.
 
 ---
 
 ## Edição via Google Sheets (opcional)
 
-Se preferir manter equipe / ferramentas / pesquisas em uma planilha do Google,
-o site sabe importar isso automaticamente.
+Se preferir manter equipe, ferramentas, pesquisas, cursos ou parceiros em
+uma planilha do Google, o site sabe importar isso automaticamente.
 
 1. Crie uma planilha no Google Sheets com as **mesmas colunas** do YAML
    correspondente (ex.: `nome,papel,bio,foto,github,linkedin,email` para
