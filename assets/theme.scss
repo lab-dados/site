@@ -61,7 +61,13 @@ $card-cap-bg: transparent;
   --ld-coral:    #{$ld-coral};
 }
 
+// Subtle paper grid that hints at the data theme without distracting.
 body {
+  background-image:
+    linear-gradient(transparent calc(100% - 1px), rgba(10,31,68,0.035) 1px),
+    linear-gradient(90deg, transparent calc(100% - 1px), rgba(10,31,68,0.035) 1px);
+  background-size: 36px 36px;
+  background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -185,7 +191,7 @@ h1 strong, h2 strong { color: var(--ld-blue-700); font-weight: 700; }
   margin-top: 0.1rem;
 }
 
-// Hero block — text-only, no decorative backdrop.
+// Hero block.
 .ld-hero {
   position: relative;
   padding: 5rem 0 3.5rem;
@@ -193,7 +199,34 @@ h1 strong, h2 strong { color: var(--ld-blue-700); font-weight: 700; }
   border-bottom: 1px solid var(--ld-line);
 }
 .ld-hero-content {
-  max-width: 780px;
+  max-width: 640px;
+}
+// Two-column hero on wide screens; stack on narrow.
+.ld-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 2.5rem;
+  align-items: center;
+}
+@media (max-width: 920px) {
+  .ld-split { grid-template-columns: 1fr; }
+}
+
+// Animated "data grid" mark on the right side of the hero.
+// JS sets fill on each .dot via inline style (wins over CSS), so no
+// CSS fill rule here — the page would briefly show empty rects until
+// the script runs, but the JS sets initial fill on the same tick.
+.ld-hero-mark {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.ld-mark-svg {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
 }
 .ld-hero h1 {
   font-size: clamp(2.4rem, 5.4vw, 4.2rem);
