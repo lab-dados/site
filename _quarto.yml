@@ -9,7 +9,7 @@ project:
 
 website:
   title: "LabDados"
-  description: "Laboratório de Dados e Pesquisa Empírica em Direito — FGV Direito SP"
+  description: "Laboratório de Dados e Pesquisa Empírica em Direito · FGV Direito SP"
   site-url: "https://lab-dados.github.io/site"
   repo-url: "https://github.com/lab-dados/site"
   repo-actions: [edit, issue]
@@ -23,18 +23,18 @@ website:
     pinned: true
     collapse-below: lg
     left:
+      - text: "Sobre"
+        href: sobre/index.qmd
+      - text: "Pesquisa"
+        href: pesquisas/index.qmd
       - text: "Escritório de apoio"
         href: escritorio/index.qmd
       - text: "Ferramentas"
         href: ferramentas/index.qmd
       - text: "Dados"
         href: dados/index.qmd
-      - text: "Pesquisa"
-        href: pesquisas/index.qmd
       - text: "Aprenda"
         href: aprenda/index.qmd
-      - text: "Sobre"
-        href: sobre/index.qmd
       - text: "Blog ↗"
         href: https://labdados.substack.com/
         target: _blank
@@ -45,20 +45,21 @@ website:
 
   page-footer:
     border: false
-    left: |
-      <div class="ld-footer-brand">
-        <img src="/assets/logo.png" alt="LabDados — Laboratório de Dados e Pesquisa Empírica em Direito · FGV Direito SP">
-        Rua Dr. Plínio Barreto, 365 · Bela Vista · São Paulo
-      </div>
     center: |
-      Feito em [Quarto](https://quarto.org). Conteúdo sob
-      [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-    right:
-      - icon: github
-        href: https://github.com/lab-dados
-      - icon: substack
-        href: https://labdados.substack.com/
-        target: _blank
+      <div class="ld-footer-brand">
+        <img src="/assets/logo-wordmark.png" alt="LabDados · Laboratório de Dados e Pesquisa Empírica em Direito · FGV Direito SP">
+        <div class="ld-footer-meta">
+          FGV Direito SP · Rua Dr. Plínio Barreto, 365 · Bela Vista · São Paulo<br>
+          <code>labdados.direitosp [at] fgv [.] br</code>
+        </div>
+        <div class="ld-footer-icons">
+          <a href="https://github.com/lab-dados" aria-label="GitHub do LabDados"><i class="bi bi-github"></i></a>
+          <a href="https://labdados.substack.com/" target="_blank" rel="noopener" aria-label="Blog no Substack"><i class="bi bi-substack"></i></a>
+        </div>
+        <div class="ld-footer-fineprint">
+          Feito em <a href="https://quarto.org">Quarto</a>. Conteúdo sob <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+        </div>
+      </div>
 
 format:
   html:

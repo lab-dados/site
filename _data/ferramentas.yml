@@ -23,7 +23,7 @@
 - nome: "labdados"
   categoria: "pacote"
   status: "beta"
-  descricao: "SDK do escritório de apoio. OCR, transcrição, estruturação com LLMs e análise de viabilidade de raspagem — em modo nuvem ou local."
+  descricao: "SDK do escritório de apoio. OCR, transcrição, estruturação com LLMs e análise de viabilidade de raspagem, em modo nuvem ou local."
   linguagem: "Python"
   repo: "https://github.com/lab-dados/labdados-sdk"
   pip: "labdados"

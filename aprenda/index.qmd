@@ -23,4 +23,4 @@ Mande e-mail para `labdados.direitosp [at] fgv [.] br`. Costumamos oferecer:
 - Introdução a programação aplicada à pesquisa em direito (Python)
 - Oficina de raspagem de dados judiciais com `juscraper`
 - Oficina de estruturação de textos com LLMs e `dataframeit`
-- Atlas.ti em uma tarde — análise qualitativa rápida
+- Atlas.ti em uma tarde: análise qualitativa rápida

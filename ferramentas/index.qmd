@@ -20,7 +20,7 @@ curta de dados.
 
 1. Comece pelo `juscraper` se você precisa coletar dados de tribunais brasileiros.
 2. Use o `dataframeit` para extrair informação estruturada de textos (ementas, decisões, contratos).
-3. Para OCR, transcrição ou estruturação em escala, abra o [escritório de apoio](../escritorio/) — peça uma API key e chame via SDK `labdados`.
+3. Para OCR, transcrição ou estruturação em escala, abra o [escritório de apoio](../escritorio/), peça uma API key e chame via SDK `labdados`.
 4. Se você usa Claude Code, instale o **marketplace de skills** com `/plugin marketplace add lab-dados/labdados-skills`.
 
 Achou um bug? Abra uma issue no repositório correspondente.

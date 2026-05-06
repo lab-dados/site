@@ -36,11 +36,11 @@ Nosso trabalho é mudar isso, peça por peça, em código aberto.
 - **E-mail:** `labdados.direitosp [at] fgv [.] br`
 - **GitHub:** [github.com/lab-dados](https://github.com/lab-dados)
 - **Blog:** [labdados.substack.com](https://labdados.substack.com/){target="_blank"}
-- **Endereço:** FGV Direito SP — Rua Dr. Plínio Barreto, 365 · Bela Vista · São Paulo · SP
+- **Endereço:** FGV Direito SP · Rua Dr. Plínio Barreto, 365 · Bela Vista · São Paulo · SP
 
 ## Histórico
 
-- **2020** — Fundação do LabDados na FGV Direito SP, como núcleo de desenvolvimento dos programas acadêmicos.
-- **2020–2024** — Workshops periódicos sobre métodos empíricos; pesquisas sobre jurisprudência do STF e Covid-19, judicialização da saúde suplementar.
-- **2025** — Primeiros pacotes Python publicados (`juscraper`, `dataframeit`); piloto do escritório de apoio.
-- **2026** — Lançamento *soft* do escritório de apoio; primeira versão pública do site.
+- **2020.** Fundação do LabDados na FGV Direito SP, como núcleo de desenvolvimento dos programas acadêmicos.
+- **2020 a 2024.** Workshops periódicos sobre métodos empíricos. Pesquisas sobre jurisprudência do STF na pandemia de Covid-19 e judicialização da saúde suplementar.
+- **2025.** Primeiros pacotes Python publicados (`juscraper`, `dataframeit`). Piloto do escritório de apoio.
+- **2026.** Lançamento *soft* do escritório de apoio. Primeira versão pública do site.

@@ -1,7 +1,7 @@
 # Pesquisas em andamento, planejadas e concluídas.
 # Status: em-andamento, concluida, planejada.
 
-- titulo: "CCD-Saúde — judicialização da saúde no TJSP"
+- titulo: "CCD-Saúde: judicialização da saúde no TJSP"
   status: "em-andamento"
   resumo: "Coleta e exploração de dados do Datajud e do TJSP para o Centro de Estudos em Saúde da FGV (FAPESP / PGE-SP)."
   parceiros: ["FAPESP", "PGE-SP", "FGV CEPI"]
@@ -13,7 +13,7 @@
   parceiros: ["FGV Direito SP"]
   ano_inicio: 2026
 
-- titulo: "Scoping review — IA na pesquisa jurídica"
+- titulo: "Scoping review: IA na pesquisa jurídica"
   status: "em-andamento"
   resumo: "Revisão sistemática sobre o uso de inteligência artificial na pesquisa empírica em direito."
   parceiros: ["FGV Direito SP"]

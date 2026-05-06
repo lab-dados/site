@@ -15,7 +15,7 @@ O LabDados segue a filosofia de **dados abertos**: tudo que pode ser publicado s
 Adotamos a definição da [Open Knowledge Foundation](https://opendefinition.org):
 
 ::: {.ld-manifesto}
-Conhecimento é aberto se qualquer pessoa for livre para acessar, usar, modificar e compartilhar — sujeito, no máximo, a medidas que preservem proveniência e abertura.
+Conhecimento é aberto se qualquer pessoa for livre para acessar, usar, modificar e compartilhar, sujeito, no máximo, a medidas que preservem proveniência e abertura.
 :::
 
 Na prática, isso significa que cada base publicada pelo laboratório tem:
@@ -31,7 +31,7 @@ Na prática, isso significa que cada base publicada pelo laboratório tem:
 ::: {.ld-card}
 [repositório]{.ld-card__tag}
 
-### Dataverse FGV — coleção Direito SP
+### Dataverse FGV (Direito SP)
 Bases publicadas pela FGV Direito SP, incluindo as do LabDados. Cada base tem DOI e citação pronta para artigo.
 
 [Abrir Dataverse →](https://dataverse.fgv.br/dataverse/direitosp){target="_blank"}
@@ -41,7 +41,7 @@ Bases publicadas pela FGV Direito SP, incluindo as do LabDados. Cada base tem DO
 [ferramenta]{.ld-card__tag}
 
 ### Coleta com `juscraper`
-Pacote Python para coletar do zero acórdãos e processos dos tribunais brasileiros — 22 TJs estaduais, Datajud e JusBR.
+Pacote Python para coletar do zero acórdãos e processos de 22 TJs estaduais, do Datajud e do JusBR.
 
 [Documentação →](https://jtrecenti.github.io/juscraper/){target="_blank"}
 :::
@@ -49,11 +49,11 @@ Pacote Python para coletar do zero acórdãos e processos dos tribunais brasilei
 
 ## Dados restritos? Use o escritório de apoio
 
-Algumas pesquisas precisam de bases que envolvem dados pessoais ou termos de fornecedor que impedem republicação. Para esses casos, o **[escritório de apoio](../escritorio/)** processa os arquivos para você sem que você precise lidar com a infraestrutura — e os arquivos são descartados em 72h.
+Algumas pesquisas precisam de bases que envolvem dados pessoais ou termos de fornecedor que impedem republicação. Para esses casos, o **[escritório de apoio](../escritorio/)** processa os arquivos para você sem que você precise lidar com a infraestrutura. Os arquivos são descartados em 72 horas.
 
 ## Termos de uso e contrapartida
 
-Pesquisas que usam ferramentas e serviços do LabDados — tanto os pacotes Python (`juscraper`, `dataframeit`, `labdados`) quanto o escritório de apoio — aceitam, ao usá-los, os **termos de uso** do laboratório.
+Pesquisas que usam ferramentas e serviços do LabDados (tanto os pacotes Python `juscraper`, `dataframeit` e `labdados` quanto o escritório de apoio) aceitam, ao usá-los, os **termos de uso** do laboratório.
 
 A principal contrapartida é simples: **se a sua pesquisa puder publicar a base resultante** (sem ferir privacidade nem termos de fornecedor), você concorda em disponibilizá-la **em formato aberto** para que o LabDados publique no Dataverse da FGV, com DOI e citação.
 

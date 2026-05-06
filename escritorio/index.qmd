@@ -10,7 +10,7 @@ toc-title: "Nesta página"
 <div class="ld-hero-escr">
   <span class="ld-hero-escr__badge">Live · Azure Brazil South</span>
   <h2>Mande seus PDFs, áudios e textos.<br><em>Pegue os resultados de volta.</em></h2>
-  <p class="sub">O escritório de apoio do LabDados processa documentos em escala — OCR, transcrição com diarização, estruturação por LLM e análise de viabilidade. Modos nuvem ou local, dados em Brazil South com retenção de 72 horas.</p>
+  <p class="sub">O escritório de apoio do LabDados processa documentos em escala: OCR, transcrição com diarização, estruturação por LLM e análise de viabilidade. Modos nuvem ou local, dados em Brazil South com retenção de 72 horas.</p>
   <div class="ld-hero-escr__row">
     <a class="ld-btn-shine" href="https://labdados-frontend.livelydesert-3e3e3dd8.brazilsouth.azurecontainerapps.io" target="_blank" rel="noopener">
       Acessar o portal <span class="arrow">→</span>
@@ -105,7 +105,7 @@ Detalhes em [`labdados-sdk`](https://github.com/lab-dados/labdados-sdk).
 
 - **Brazil South.** Todo recurso que processa ou armazena dados de pesquisa roda em `brazilsouth`.
 - **Retenção 72h.** Documentos têm expiração automática via Blob Lifecycle Management.
-- **Detector PII como camada, não garantia.** O serviço de anonimização usa modelos `openai/privacy-filter` e `pierreguillou/ner-bert-base-cased-pt-lenerbr` em uma abordagem de privacy-by-design — **não substitui revisão humana** para divulgação pública.
+- **Detector PII como camada, não garantia.** O serviço de anonimização usa modelos `openai/privacy-filter` e `pierreguillou/ner-bert-base-cased-pt-lenerbr` em uma abordagem de privacy-by-design. **Não substitui revisão humana** para divulgação pública.
 
 ## Pedir uma API key
 
