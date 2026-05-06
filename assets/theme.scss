@@ -288,24 +288,21 @@ h1 strong, h2 strong { color: var(--ld-blue-700); font-weight: 700; }
 .ld-mark-svg {
   position: relative;
   z-index: 1;
-  width: 78%;
-  max-width: 300px;
+  width: 70%;
+  max-width: 240px;
   height: auto;
-  filter: drop-shadow(0 18px 40px rgba(16,62,92,0.18));
-}
-.ld-mark-svg .outline {
-  fill: none;
-  stroke: var(--ld-navy);
+  filter: drop-shadow(0 14px 30px rgba(16,62,92,0.16));
 }
 .ld-mark-svg .dot {
   fill: var(--ld-blue);
-  transition: fill 0.4s ease, filter 0.4s ease;
+  transition: fill 0.35s ease, filter 0.35s ease, transform 0.35s ease;
   transform-origin: center;
   transform-box: fill-box;
 }
 .ld-mark-svg .dot.shine {
   fill: #7eb5e0;
-  filter: drop-shadow(0 0 8px rgba(126,181,224,0.95));
+  filter: drop-shadow(0 0 12px rgba(126,181,224,0.95));
+  transform: scale(1.08);
 }
 .ld-hero-wordmark {
   position: relative;
