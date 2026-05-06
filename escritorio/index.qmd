@@ -12,8 +12,8 @@ toc-title: "Nesta página"
   <h2>Mande seus PDFs, áudios e textos.<br><em>Pegue os resultados de volta.</em></h2>
   <p class="sub">O escritório de apoio do LabDados processa documentos em escala — OCR, transcrição com diarização, estruturação por LLM e análise de viabilidade. Modos nuvem ou local, dados em Brazil South com retenção de 72 horas.</p>
   <div class="ld-hero-escr__row">
-    <a class="ld-btn-shine" href="https://labdados-frontend.livelydesert-3e3e3dd8.brazilsouth.azurecontainerapps.io/consultoria/api-key" target="_blank" rel="noopener">
-      Pedir API key <span class="arrow">→</span>
+    <a class="ld-btn-shine" href="https://labdados-frontend.livelydesert-3e3e3dd8.brazilsouth.azurecontainerapps.io" target="_blank" rel="noopener">
+      Acessar o portal <span class="arrow">→</span>
     </a>
     <a class="ld-btn-ghost-dark" href="https://github.com/lab-dados/labdados-sdk" target="_blank" rel="noopener">
       <i class="bi bi-github"></i> Ver SDK no GitHub
@@ -109,7 +109,7 @@ Detalhes em [`labdados-sdk`](https://github.com/lab-dados/labdados-sdk).
 
 ## Pedir uma API key
 
-Acesse o [portal do escritório](https://labdados-frontend.livelydesert-3e3e3dd8.brazilsouth.azurecontainerapps.io) e siga o link **"Pedir API key"**. Você preenche um formulário curto, o admin do laboratório aprova, e o token chega por e-mail.
+Acesse o [portal do escritório](https://labdados-frontend.livelydesert-3e3e3dd8.brazilsouth.azurecontainerapps.io){target="_blank"} e siga o link de pedido de API key. Você preenche um formulário curto, o admin do laboratório aprova, e o token chega por e-mail.
 
 ## Código e arquitetura
 

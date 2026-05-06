@@ -1,6 +1,6 @@
 ---
 title: "Dados"
-description: "Bases publicadas pelo LabDados e como conseguir acesso a dados restritos."
+description: "Bases publicadas pelo LabDados, filosofia de dados abertos e como conseguir acesso a dados restritos."
 toc: true
 toc-location: right
 toc-title: "Nesta página"
@@ -18,12 +18,12 @@ Adotamos a definição da [Open Knowledge Foundation](https://opendefinition.org
 Conhecimento é aberto se qualquer pessoa for livre para acessar, usar, modificar e compartilhar — sujeito, no máximo, a medidas que preservem proveniência e abertura.
 :::
 
-Na prática, isso significa que cada base do laboratório é publicada com:
+Na prática, isso significa que cada base publicada pelo laboratório tem:
 
 - **Licença explícita** (CC BY 4.0 por padrão).
 - **DOI persistente** via Dataverse da FGV.
 - **Documentação** dos campos, métodos de coleta e versão.
-- **Código de coleta e tratamento** versionado em GitHub.
+- **Código de coleta e tratamento** versionado em repositório aberto.
 
 ## Onde estão os dados
 
@@ -41,9 +41,9 @@ Bases publicadas pela FGV Direito SP, incluindo as do LabDados. Cada base tem DO
 [ferramenta]{.ld-card__tag}
 
 ### Coleta com `juscraper`
-Pacote Python para coletar do zero acórdãos e processos dos tribunais brasileiros. 22 TJs estaduais + Datajud + JusBR.
+Pacote Python para coletar do zero acórdãos e processos dos tribunais brasileiros — 22 TJs estaduais, Datajud e JusBR.
 
-[Ver no PyPI →](https://pypi.org/project/juscraper/){target="_blank"}
+[Documentação →](https://jtrecenti.github.io/juscraper/){target="_blank"}
 :::
 :::
 
@@ -51,13 +51,12 @@ Pacote Python para coletar do zero acórdãos e processos dos tribunais brasilei
 
 Algumas pesquisas precisam de bases que envolvem dados pessoais ou termos de fornecedor que impedem republicação. Para esses casos, o **[escritório de apoio](../escritorio/)** processa os arquivos para você sem que você precise lidar com a infraestrutura — e os arquivos são descartados em 72h.
 
-## Quero publicar uma base no Dataverse do laboratório
+## Termos de uso e contrapartida
 
-Mande e-mail para `labdados.direitosp [at] fgv [.] br` com:
+Pesquisas que usam ferramentas e serviços do LabDados — tanto os pacotes Python (`juscraper`, `dataframeit`, `labdados`) quanto o escritório de apoio — aceitam, ao usá-los, os **termos de uso** do laboratório.
 
-1. Nome e descrição da base (1–2 parágrafos).
-2. Fonte e método de coleta.
-3. Indicação se contém dados pessoais.
-4. Sugestão de licença (default CC BY 4.0).
+A principal contrapartida é simples: **se a sua pesquisa puder publicar a base resultante** (sem ferir privacidade nem termos de fornecedor), você concorda em disponibilizá-la **em formato aberto** para que o LabDados publique no Dataverse da FGV, com DOI e citação.
 
-Confirmamos a publicação, geramos DOI e damos retorno para você citar no artigo.
+A ideia é que cada uso devolva valor para a comunidade: você ganha a ferramenta, e a próxima pessoa que precisar do mesmo recorte parte do seu trabalho.
+
+A versão completa dos termos de uso está em construção e será publicada no portal do escritório de apoio.

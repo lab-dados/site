@@ -49,44 +49,6 @@ O LabDados é um laboratório da **FGV Direito SP** que constrói ferramentas, c
 
 ::: {.container-page}
 
-::: {.ld-stats}
-::: {.ld-stat}
-::: {.ld-stat__num}
-2020
-:::
-::: {.ld-stat__label}
-ano de fundação
-:::
-:::
-
-::: {.ld-stat}
-::: {.ld-stat__num}
-22
-:::
-::: {.ld-stat__label}
-tribunais com raspador pronto
-:::
-:::
-
-::: {.ld-stat}
-::: {.ld-stat__num}
-4
-:::
-::: {.ld-stat__label}
-serviços no escritório de apoio
-:::
-:::
-
-::: {.ld-stat}
-::: {.ld-stat__num}
-8
-:::
-::: {.ld-stat__label}
-skills no marketplace
-:::
-:::
-:::
-
 ::: {.ld-section}
 ## O que fazemos
 
