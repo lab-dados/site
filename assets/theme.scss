@@ -230,19 +230,18 @@ footer.footer {
 }
 
 // Animated "data grid" mark on the right side of the hero.
-// JS sets fill on each .dot via inline style (wins over CSS), so no
-// CSS fill rule here — the page would briefly show empty rects until
-// the script runs, but the JS sets initial fill on the same tick.
+// JS sets fill on each .dot via inline style (wins over CSS).
 .ld-hero-mark {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 1.25rem;
+  height: 100%;
 }
 .ld-mark-svg {
   width: 100%;
-  max-width: 280px;
+  max-width: 480px;
   height: auto;
 }
 .ld-hero h1, .ld-hero-title {
