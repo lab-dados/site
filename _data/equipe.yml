@@ -1,0 +1,26 @@
+# Equipe do LabDados.
+# Para adicionar uma pessoa, copie um bloco e edite os campos.
+# Os campos `foto`, `lattes`, `orcid` e `bluesky` são opcionais.
+# `papel` é livre — sugestões: "Coordenação", "Pesquisador(a)", "Bolsista", "Colaborador(a)".
+
+- nome: "Julio Trecenti"
+  papel: "Coordenação"
+  bio: "Estatístico, doutor pelo IME-USP. Coordena o LabDados, ensina ciência de dados no Insper e dirige a tecnologia da ABJ."
+  foto: "https://github.com/jtrecenti.png"
+  github: "jtrecenti"
+  linkedin: "jtrecenti"
+  email: "julio.trecenti@fgv.br"
+  site: "https://jtrecenti.com"
+
+- nome: "Bruno Carvalho"
+  papel: "Pesquisador / Ferramentas"
+  bio: "Pesquisador no LabDados. Mantém o `dataframeit` e contribui com o ecossistema de skills para Claude Code."
+  foto: "https://github.com/bdcdo.png"
+  github: "bdcdo"
+
+# - nome: "Seu nome aqui"
+#   papel: "Pesquisador(a)"
+#   bio: "Uma frase curta sobre a sua atuação no laboratório."
+#   foto: "https://github.com/seu-usuario.png"
+#   github: "seu-usuario"
+#   linkedin: "seu-usuario"

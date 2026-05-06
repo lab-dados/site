@@ -1,0 +1,47 @@
+---
+title: "Sobre"
+description: "Missão, governança e parcerias do LabDados."
+toc: true
+toc-location: right
+---
+
+## Missão
+
+O **LabDados** é o Laboratório de Dados e Pesquisa Empírica em Direito da
+**FGV Direito SP**. Construímos ferramentas, conduzimos pesquisas e formamos
+pessoas para usar dados em pesquisa empírica em direito.
+
+::: {.ld-manifesto}
+Pesquisa empírica em direito ainda é cara, manual e fechada.
+Nosso trabalho é mudar isso, peça por peça, em código aberto.
+:::
+
+## Como nos organizamos
+
+- **Coordenação acadêmica** na FGV Direito SP.
+- **Tarefas administrativas** acompanhadas no repositório [`lab-dados/adm`](https://github.com/lab-dados/adm).
+- **Kanban público** — o planejamento do trimestre fica no project *Kanban LabDados*.
+- **Reuniões de planejamento** trimestrais; relatório executivo semanal automatizado pela skill *scrum-master*.
+
+## Princípios
+
+1. **Código aberto por padrão.** Licença MIT para código, CC BY 4.0 para texto.
+2. **Reprodutibilidade.** Tudo que publicamos roda do zero a partir do repositório.
+3. **Privacidade desde o desenho.** Dados pessoais ficam em Brazil South e têm retenção curta. Detector PII é camada, não garantia.
+4. **Documentação em português.** A pesquisa empírica em direito brasileira é majoritariamente em português, e nossas ferramentas refletem isso.
+
+## Parceiros
+
+{{< include /_partials/parceiros.html >}}
+
+## Contato
+
+- **E-mail:** `labdados@fgv.br`
+- **GitHub:** [github.com/lab-dados](https://github.com/lab-dados)
+- **Endereço:** FGV Direito SP — Rua Rocha, 233 · Bela Vista · São Paulo · SP
+
+## Histórico
+
+- **2024** — Fundação do laboratório na FGV Direito SP.
+- **2025** — Primeiros pacotes Python publicados; piloto do escritório de apoio.
+- **2026** — Lançamento soft do escritório de apoio; primeira versão pública do site.

@@ -1,0 +1,12 @@
+[project]
+name = "labdados-site"
+version = "0.1.0"
+description = "Site institucional do LabDados — FGV Direito SP"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pyyaml>=6.0.2",
+]
+
+[tool.uv]
+package = false

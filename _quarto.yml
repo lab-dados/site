@@ -1,0 +1,79 @@
+project:
+  type: website
+  output-dir: _site
+  pre-render:
+    - tools/build_data.py
+  resources:
+    - "assets/**"
+    - "CNAME"
+
+website:
+  title: "LabDados"
+  description: "Laboratório de Dados e Pesquisa Empírica em Direito — FGV Direito SP"
+  site-url: "https://lab-dados.github.io/site"
+  repo-url: "https://github.com/lab-dados/site"
+  repo-actions: [edit, issue]
+  open-graph: true
+  twitter-card: true
+  favicon: assets/favicon.svg
+
+  navbar:
+    logo: assets/logo.svg
+    title: false
+    pinned: true
+    collapse-below: lg
+    left:
+      - text: "Ferramentas"
+        href: ferramentas/index.qmd
+      - text: "Pesquisa"
+        href: pesquisa/index.qmd
+      - text: "Aprenda"
+        href: aprenda/index.qmd
+      - text: "Blog"
+        href: blog/index.qmd
+      - text: "Equipe"
+        href: equipe/index.qmd
+      - text: "Sobre"
+        href: sobre/index.qmd
+    right:
+      - icon: github
+        href: https://github.com/lab-dados
+        aria-label: GitHub do LabDados
+
+  page-footer:
+    border: false
+    left: |
+      **LabDados** — Laboratório de Dados e Pesquisa Empírica em Direito<br>
+      FGV Direito SP · Rua Rocha, 233 · São Paulo
+    center: |
+      Feito em [Quarto](https://quarto.org). Conteúdo sob
+      [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), código sob [MIT](https://opensource.org/licenses/MIT).
+    right:
+      - icon: github
+        href: https://github.com/lab-dados
+      - icon: envelope
+        href: mailto:labdados@fgv.br
+
+format:
+  html:
+    theme:
+      - cosmo
+      - assets/theme.scss
+    css: assets/styles.css
+    toc: false
+    page-layout: full
+    grid:
+      sidebar-width: 0px
+      body-width: 1100px
+      margin-width: 0px
+      gutter-width: 1.5rem
+    link-external-newwindow: true
+    link-external-icon: false
+    smooth-scroll: true
+    anchor-sections: true
+    code-copy: true
+    code-overflow: wrap
+    include-in-header:
+      - assets/fonts.html
+
+lang: pt-BR

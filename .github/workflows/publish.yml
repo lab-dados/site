@@ -1,0 +1,81 @@
+name: Render and deploy site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    # 06:00 UTC daily — re-render to pick up new Substack posts.
+    - cron: "0 6 * * *"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v3
+        with:
+          enable-cache: true
+
+      - name: Install Python deps
+        run: uv sync --frozen || uv sync
+
+      - name: Setup Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: "1.5.57"
+
+      - name: Build content partials (idempotent — also runs as Quarto pre-render)
+        env:
+          LABDADOS_SUBSTACK_URL: ${{ vars.LABDADOS_SUBSTACK_URL }}
+          LABDADOS_SHEETS_CSV_EQUIPE:      ${{ secrets.LABDADOS_SHEETS_CSV_EQUIPE }}
+          LABDADOS_SHEETS_CSV_FERRAMENTAS: ${{ secrets.LABDADOS_SHEETS_CSV_FERRAMENTAS }}
+          LABDADOS_SHEETS_CSV_PESQUISAS:   ${{ secrets.LABDADOS_SHEETS_CSV_PESQUISAS }}
+          LABDADOS_SHEETS_CSV_CURSOS:      ${{ secrets.LABDADOS_SHEETS_CSV_CURSOS }}
+          LABDADOS_SHEETS_CSV_PARCEIROS:   ${{ secrets.LABDADOS_SHEETS_CSV_PARCEIROS }}
+        run: uv run python tools/build_data.py
+
+      - name: Render site
+        env:
+          # Substack URL of the LabDados publication. When set, the blog
+          # page and the home pull the latest posts via RSS.
+          # Configure as a repo *variable* (not secret) named LABDADOS_SUBSTACK_URL.
+          LABDADOS_SUBSTACK_URL: ${{ vars.LABDADOS_SUBSTACK_URL }}
+
+          # Optional Google Sheets sync — set these as repo secrets if you
+          # want non-programmers to maintain content via a published Sheet.
+          # The URLs must be "Publish to web" CSV exports.
+          LABDADOS_SHEETS_CSV_EQUIPE:      ${{ secrets.LABDADOS_SHEETS_CSV_EQUIPE }}
+          LABDADOS_SHEETS_CSV_FERRAMENTAS: ${{ secrets.LABDADOS_SHEETS_CSV_FERRAMENTAS }}
+          LABDADOS_SHEETS_CSV_PESQUISAS:   ${{ secrets.LABDADOS_SHEETS_CSV_PESQUISAS }}
+          LABDADOS_SHEETS_CSV_CURSOS:      ${{ secrets.LABDADOS_SHEETS_CSV_CURSOS }}
+          LABDADOS_SHEETS_CSV_PARCEIROS:   ${{ secrets.LABDADOS_SHEETS_CSV_PARCEIROS }}
+        run: uv run --with pyyaml quarto render
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

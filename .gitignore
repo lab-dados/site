@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# uv / venv
+.venv/
+.python-version
+
+# Quarto
+/_site/
+/.quarto/
+/_partials/
+*.html~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+**/*.quarto_ipynb

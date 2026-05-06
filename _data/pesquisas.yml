@@ -1,0 +1,41 @@
+# Pesquisas em andamento e concluídas.
+# Status: em-andamento, concluida, planejada.
+
+- titulo: "CCD-Saúde — judicialização da saúde no TJSP"
+  status: "em-andamento"
+  resumo: "Coleta e exploração de dados do Datajud e do TJSP para o Centro de Estudos em Saúde da FGV (FAPESP / PGE-SP)."
+  parceiros: ["FAPESP", "PGE-SP", "FGV CEPI"]
+  ano_inicio: 2025
+  repo: "https://github.com/lab-dados/ccd-saude-data"
+
+- titulo: "Benchmark de LLMs em metadados do TCU"
+  status: "em-andamento"
+  resumo: "Avaliação sistemática de LLMs para extração estruturada de metadados de instruções técnicas do TCU."
+  parceiros: ["FGV Direito SP"]
+  ano_inicio: 2025
+  repo: "https://github.com/lab-dados/benchmark-llms"
+
+- titulo: "Pesquisa ANS — Notificações de Intermediação Preliminar"
+  status: "planejada"
+  resumo: "Análise das NIPs registradas pela ANS para entender padrões de conflito entre operadoras de saúde e beneficiários."
+  parceiros: ["ANS"]
+  ano_inicio: 2026
+
+- titulo: "Scoping review — IA na pesquisa jurídica"
+  status: "em-andamento"
+  resumo: "Revisão sistemática sobre o uso de inteligência artificial na pesquisa empírica em direito, em parceria com pesquisadores canadenses."
+  parceiros: ["Universidade de Montréal"]
+  ano_inicio: 2025
+
+- titulo: "BaseMS — anexo SEI 0054891711"
+  status: "concluida"
+  resumo: "Análise de processos judiciais do anexo SEI com enriquecimento via Datajud (CNJ)."
+  parceiros: ["Ministério da Saúde"]
+  ano_inicio: 2024
+  repo: "https://github.com/lab-dados/baseMS"
+
+# - titulo: "Sua pesquisa aqui"
+#   status: "planejada"
+#   resumo: "Uma frase sobre a pergunta de pesquisa."
+#   parceiros: []
+#   ano_inicio: 2026

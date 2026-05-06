@@ -1,0 +1,27 @@
+---
+title: "Aprenda"
+description: "Cursos, oficinas, workshops e o livro do laboratório."
+toc: false
+---
+
+::: {.lead}
+Materiais para usar dados em pesquisa empírica em direito. Tudo aberto, em
+licença CC BY 4.0 (texto) ou MIT (código).
+:::
+
+{{< include /_partials/cursos.html >}}
+
+## Workshops e oficinas
+
+A agenda de workshops do laboratório fica anunciada no [blog](../blog/index.qmd) e nas
+issues abertas do [`lab-dados/adm`](https://github.com/lab-dados/adm/issues).
+Em breve, agenda integrada com Google Calendar.
+
+## Quer trazer um curso para a sua instituição?
+
+Mande e-mail para **labdados@fgv.br**. Costumamos oferecer:
+
+- Introdução a programação aplicada à pesquisa em direito (R + Python)
+- Oficina de raspagem de dados judiciais com `juscraper`
+- Oficina de estruturação de textos com LLMs e `dataframeit`
+- Atlas.ti em uma tarde — análise qualitativa rápida

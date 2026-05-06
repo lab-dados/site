@@ -1,0 +1,21 @@
+---
+title: "Pesquisa"
+description: "Projetos em andamento, planejados e concluídos."
+toc: false
+---
+
+::: {.lead}
+Pesquisas conduzidas pelo LabDados ou em parceria com outras instituições.
+Cada projeto tem repositório próprio com código, dados (quando possível) e
+relatórios.
+:::
+
+{{< include /_partials/pesquisas.html >}}
+
+---
+
+::: {.ld-manifesto}
+Quer propor uma pesquisa? Mande e-mail para **labdados@fgv.br** ou abra uma
+*issue* no repositório [`lab-dados/adm`](https://github.com/lab-dados/adm/issues).
+Olhamos demandas externas regularmente.
+:::

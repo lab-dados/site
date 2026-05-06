@@ -1,0 +1,27 @@
+---
+title: "Ferramentas"
+description: "Pacotes, SDKs, skills e serviços que o LabDados mantém ou apoia."
+toc: true
+toc-location: right
+toc-title: "Categorias"
+---
+
+::: {.lead}
+Tudo que está aqui é **público e versionado em GitHub**. Pacotes Python têm
+distribuição pelo PyPI; serviços rodam em Azure Brazil South com retenção
+curta de dados.
+:::
+
+{{< include /_partials/ferramentas.html >}}
+
+---
+
+## Como usar isto na sua pesquisa
+
+1. Comece pelo `juscraper` se você precisa coletar dados de tribunais brasileiros.
+2. Use o `dataframeit` para extrair informação estruturada de textos (ementas, decisões, contratos).
+3. Para OCR, transcrição ou estruturação em escala, use o **escritório de apoio** — peça uma API key no portal e chame via SDK `labdados`.
+4. Se você usa Claude Code, instale o **marketplace de skills** com `/plugin marketplace add lab-dados/labdados-skills`.
+
+Achou um bug? Abra uma issue no repositório correspondente. Quer contribuir?
+A licença default do laboratório é MIT.
