@@ -6,18 +6,26 @@ toc-location: right
 toc-title: "Nesta página"
 ---
 
-::: {.lead}
-O **escritório de apoio** é um serviço do LabDados que tira da frente do pesquisador o trabalho de extrair texto de PDF, transcrever áudios e estruturar informação em escala. Você manda os arquivos, recebe os resultados.
-:::
-
 ```{=html}
-<a class="ld-callout" href="https://labdados-frontend.livelydesert-3e3e3dd8.brazilsouth.azurecontainerapps.io" target="_blank" rel="noopener">
-  <div>
-    <h3>Acessar o portal do escritório</h3>
-    <p>Peça uma API key, abra um pedido pelo wizard e acompanhe o status. Em breve, em domínio próprio do laboratório.</p>
+<div class="ld-hero-escr">
+  <span class="ld-hero-escr__badge">Live · Azure Brazil South</span>
+  <h2>Mande seus PDFs, áudios e textos.<br><em>Pegue os resultados de volta.</em></h2>
+  <p class="sub">O escritório de apoio do LabDados processa documentos em escala — OCR, transcrição com diarização, estruturação por LLM e análise de viabilidade. Modos nuvem ou local, dados em Brazil South com retenção de 72 horas.</p>
+  <div class="ld-hero-escr__row">
+    <a class="ld-btn-shine" href="https://labdados-frontend.livelydesert-3e3e3dd8.brazilsouth.azurecontainerapps.io/consultoria/api-key" target="_blank" rel="noopener">
+      Pedir API key <span class="arrow">→</span>
+    </a>
+    <a class="ld-btn-ghost-dark" href="https://github.com/lab-dados/labdados-sdk" target="_blank" rel="noopener">
+      <i class="bi bi-github"></i> Ver SDK no GitHub
+    </a>
   </div>
-  <span class="ld-cta">Abrir portal →</span>
-</a>
+  <div class="ld-hero-escr__services">
+    <span>OCR de PDF</span>
+    <span>Transcrição de áudio</span>
+    <span>Estruturação com LLMs</span>
+    <span>Análise de viabilidade</span>
+  </div>
+</div>
 ```
 
 ## O que o escritório faz
