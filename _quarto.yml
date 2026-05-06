@@ -46,8 +46,10 @@ website:
   page-footer:
     border: false
     left: |
-      **LabDados** — Laboratório de Dados e Pesquisa Empírica em Direito<br>
-      FGV Direito SP · Rua Dr. Plínio Barreto, 365 · Bela Vista · São Paulo
+      <div class="ld-footer-brand">
+        <img src="/assets/logo-color.png" alt="LabDados — Laboratório de Dados e Pesquisa Empírica em Direito · FGV Direito SP">
+        Rua Dr. Plínio Barreto, 365 · Bela Vista · São Paulo
+      </div>
     center: |
       Feito em [Quarto](https://quarto.org). Conteúdo sob
       [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).

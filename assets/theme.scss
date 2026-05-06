@@ -77,7 +77,8 @@ h1 strong, h2 strong { color: var(--ld-green-700); font-weight: 700; }
 .navbar {
   background: var(--ld-navy) !important;
   border-bottom: 1px solid rgba(255,255,255,0.06);
-  .navbar-brand img { height: 28px; width: auto; }
+  .navbar-brand { padding-block: 0.25rem; }
+  .navbar-brand img { height: 38px; width: auto; }
   .nav-link { font-weight: 500; letter-spacing: 0.005em; }
   .nav-link.active { color: #fff !important; border-bottom: 2px solid var(--ld-green); }
   .navbar-toggler { border-color: rgba(255,255,255,0.25); }
@@ -89,8 +90,15 @@ h1 strong, h2 strong { color: var(--ld-green-700); font-weight: 700; }
   background: #fff;
   color: var(--ld-mute);
   font-size: 0.92rem;
-  padding-block: 1.6rem;
+  padding-block: 2rem;
   a { color: var(--ld-navy); }
+}
+// Brand block in the footer (full-color logo + colophon)
+.ld-footer-brand img {
+  display: block;
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 0.6rem;
 }
 
 // Hero block (used in index)

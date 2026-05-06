@@ -1,16 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 48" role="img" aria-label="LabDados">
-  <g fill="none" stroke="none">
-    <!-- mark: stylized 'L.' as a small dot-grid -->
-    <g transform="translate(4,8)">
-      <rect x="0"  y="0"  width="6" height="6" rx="1.5" fill="#ffffff"/>
-      <rect x="0"  y="10" width="6" height="6" rx="1.5" fill="#ffffff" opacity="0.8"/>
-      <rect x="0"  y="20" width="6" height="6" rx="1.5" fill="#ffffff" opacity="0.6"/>
-      <rect x="10" y="20" width="6" height="6" rx="1.5" fill="#00a37a"/>
-      <rect x="20" y="20" width="6" height="6" rx="1.5" fill="#ffffff" opacity="0.45"/>
-      <rect x="30" y="20" width="6" height="6" rx="1.5" fill="#00a37a" opacity="0.7"/>
-    </g>
-    <text x="50" y="32" font-family="'Space Grotesk', 'Inter', sans-serif" font-weight="700" font-size="22" fill="#ffffff" letter-spacing="-0.5">
-      Lab<tspan fill="#00a37a">Dados</tspan>
-    </text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 56" role="img" aria-label="LabDados — Laboratório de Dados e Pesquisa Empírica em Direito · FGV Direito SP">
+  <!-- Stencil "L" mark — vertical dotted column + horizontal dotted base, with one green pixel for the LabDados accent. -->
+  <g transform="translate(4,12)" fill="#ffffff">
+    <rect x="0"  y="0"  width="5" height="5" rx="1"/>
+    <rect x="0"  y="7"  width="5" height="5" rx="1"/>
+    <rect x="0"  y="14" width="5" height="5" rx="1"/>
+    <rect x="0"  y="21" width="5" height="5" rx="1"/>
+    <rect x="7"  y="21" width="5" height="5" rx="1"/>
+    <rect x="14" y="21" width="5" height="5" rx="1" fill="#00a37a"/>
   </g>
+  <!-- Stencil "D" outline next to the L. -->
+  <g transform="translate(27,12)" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linejoin="round">
+    <path d="M0,0 L8,0 C16,0 22,5.8 22,13 C22,20.2 16,26 8,26 L0,26 Z" />
+  </g>
+  <!-- Wordmark -->
+  <text x="60" y="32" font-family="'Space Grotesk','Inter',sans-serif" font-weight="700" font-size="22" fill="#ffffff" letter-spacing="-0.5">LabDados</text>
+  <!-- Tagline -->
+  <text x="60" y="46" font-family="'JetBrains Mono','Inter',monospace" font-weight="500" font-size="7.5" fill="#9bb1d6" letter-spacing="0.16em">FGV DIREITO SP</text>
 </svg>
