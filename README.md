@@ -14,7 +14,7 @@ da FGV Direito SP — <https://lab-dados.github.io/site>.
 Praticamente todo conteúdo do site fica em dois lugares:
 
 1. **Páginas de texto** — em `index.qmd` (home), e nas pastas
-   `sobre/`, `pesquisa/`, `aprenda/`, `ferramentas/`, `dados/` e `escritorio/`.
+   `sobre/`, `pesquisas/`, `aprenda/`, `ferramentas/`, `dados/` e `escritorio/`.
    São arquivos `.qmd` (Markdown). Você edita o texto direto.
 
 2. **Listas de cartões** (equipe, ferramentas, pesquisas, cursos, parceiros)

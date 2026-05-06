@@ -30,7 +30,7 @@ website:
       - text: "Dados"
         href: dados/index.qmd
       - text: "Pesquisa"
-        href: pesquisa/index.qmd
+        href: pesquisas/index.qmd
       - text: "Aprenda"
         href: aprenda/index.qmd
       - text: "Sobre"

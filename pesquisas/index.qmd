@@ -2,6 +2,8 @@
 title: "Pesquisa"
 description: "Projetos em andamento, planejados e concluídos."
 toc: false
+aliases:
+  - /pesquisa/
 ---
 
 ::: {.lead}

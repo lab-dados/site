@@ -65,7 +65,7 @@ Três frentes que se reforçam: **ferramentas** que retiram fricção da pesquis
   </div>
   <div class="ld-card">
     <span class="ld-card__tag">pesquisa</span>
-    <h3><a class="ld-card__link" href="pesquisa/">Pesquisas em andamento</a></h3>
+    <h3><a class="ld-card__link" href="pesquisas/">Pesquisas em andamento</a></h3>
     <p>Projetos com parceiros institucionais e sociedade civil — judicialização da saúde, jurisprudência do TCU, IA na pesquisa em direito.</p>
   </div>
   <div class="ld-card">

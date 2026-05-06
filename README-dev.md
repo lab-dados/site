@@ -34,7 +34,7 @@ labdados-site/
 ├── escritorio/index.qmd     # seções
 ├── ferramentas/index.qmd
 ├── dados/index.qmd
-├── pesquisa/index.qmd
+├── pesquisas/index.qmd
 ├── aprenda/index.qmd
 ├── sobre/index.qmd          # inclui equipe via partial
 # Blog não tem página local — link no navbar abre Substack em nova aba.
