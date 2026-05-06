@@ -18,7 +18,7 @@ website:
   favicon: assets/favicon.svg
 
   navbar:
-    logo: assets/logo.png
+    logo: assets/logo-mark.png
     title: false
     pinned: true
     collapse-below: lg

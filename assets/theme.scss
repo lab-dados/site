@@ -77,9 +77,9 @@ h1 strong, h2 strong { color: var(--ld-green-700); font-weight: 700; }
 .navbar {
   background: #ffffff !important;
   border-bottom: 1px solid var(--ld-line);
-  .navbar-brand { padding-block: 0.25rem; }
+  .navbar-brand { padding-block: 0.2rem; }
   .navbar-brand img {
-    height: 56px;
+    height: 40px;
     width: auto;
     display: block;
   }
@@ -111,10 +111,10 @@ h1 strong, h2 strong { color: var(--ld-green-700); font-weight: 700; }
 // Brand block in the footer (full-color logo + colophon)
 .ld-footer-brand img {
   display: block;
-  max-width: 320px;
+  max-width: 360px;
   width: 100%;
   height: auto;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
 }
 
 // Hero block (used in index)
