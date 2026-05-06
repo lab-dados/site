@@ -12,7 +12,6 @@ website:
   description: "Laboratório de Dados e Pesquisa Empírica em Direito · FGV Direito SP"
   site-url: "https://lab-dados.github.io/site"
   repo-url: "https://github.com/lab-dados/site"
-  repo-actions: [edit, issue]
   open-graph: true
   twitter-card: true
   favicon: assets/favicon.svg
