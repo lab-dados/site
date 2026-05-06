@@ -124,16 +124,18 @@ h1 strong, h2 strong { color: var(--ld-blue-700); font-weight: 700; }
 
 // Footer — compact, typed-text lockup that mimics the official logo:
 // "LabDados" wordmark on top + small-caps tagline + "FGV DIREITO SP".
-.nav-footer {
+// Quarto wraps the whole thing in <footer class="footer"> with three
+// inner cells (left/center/right). We collapse to just the center.
+footer.footer {
   border-top: 1px solid var(--ld-line);
   background: #fff;
   color: var(--ld-mute);
   font-size: 0.9rem;
   padding-block: 1.5rem;
   a { color: var(--ld-navy); }
-  .nav-footer-left, .nav-footer-right { display: none; }
-  .nav-footer-center { width: 100%; flex: 1 1 100%; }
 }
+.nav-footer-left, .nav-footer-right { display: none !important; }
+.nav-footer-center { width: 100% !important; flex: 1 1 100% !important; }
 .ld-footer-brand {
   text-align: center;
   display: flex;
@@ -145,18 +147,34 @@ h1 strong, h2 strong { color: var(--ld-blue-700); font-weight: 700; }
 }
 .ld-footer-brand p { margin: 0; line-height: 1.45; }
 
-// Wordmark — same Manrope as the hero, smaller scale.
+// Footer logo lockup: LD mark on the left of the wordmark.
+.ld-footer-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  line-height: 1;
+}
+.ld-footer-lockup figure { margin: 0; }
+.ld-footer-mark img,
+.ld-footer-brand img.ld-footer-mark {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
+// Wordmark — Manrope, lighter weight than the hero brand label so it
+// reads as a calm logotype rather than a callout.
 .ld-footer-wordmark {
   font-family: "Manrope", $headings-font-family;
-  font-weight: 800;
-  font-size: 1.55rem;
-  letter-spacing: -0.025em;
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: -0.022em;
   color: var(--ld-navy);
   line-height: 1;
 }
 .ld-footer-wordmark .dados {
   color: var(--ld-blue);
-  font-weight: 700;
+  font-weight: 500;
 }
 
 // Tagline strip ("LABORATÓRIO DE DADOS E ... | FGV DIREITO SP")
@@ -191,12 +209,11 @@ h1 strong, h2 strong { color: var(--ld-blue-700); font-weight: 700; }
   margin-top: 0.1rem;
 }
 
-// Hero block.
+// Hero block — no background or border, lets the body grid pass through
+// uniformly so the hero doesn't look like a framed rectangle.
 .ld-hero {
   position: relative;
-  padding: 5rem 0 3.5rem;
-  background: var(--ld-paper);
-  border-bottom: 1px solid var(--ld-line);
+  padding: 4rem 0 3rem;
 }
 .ld-hero-content {
   max-width: 640px;
@@ -228,12 +245,14 @@ h1 strong, h2 strong { color: var(--ld-blue-700); font-weight: 700; }
   max-width: 280px;
   height: auto;
 }
-.ld-hero h1 {
-  font-size: clamp(2.4rem, 5.4vw, 4.2rem);
+.ld-hero h1, .ld-hero-title {
+  font-size: clamp(2.2rem, 4.2vw, 3.4rem);
   line-height: 1.05;
-  margin-bottom: 1.1rem;
+  margin: 0 0 1.1rem;
   font-weight: 700;
+  letter-spacing: -0.015em;
 }
+.ld-hero-title strong { color: var(--ld-blue-700); font-weight: 700; }
 .ld-hero p.lead {
   font-size: clamp(1.05rem, 1.6vw, 1.25rem);
   color: var(--ld-mute);

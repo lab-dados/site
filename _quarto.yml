@@ -50,7 +50,11 @@ website:
     border: false
     center: |
       ::: {.ld-footer-brand}
+      ::: {.ld-footer-lockup}
+      ![](/assets/logo-mark.png){.ld-footer-mark fig-alt="Mark do LabDados"}
+
       [Lab[Dados]{.dados}]{.ld-footer-wordmark}
+      :::
 
       [[LABORATÓRIO DE DADOS E PESQUISA EMPÍRICA EM DIREITO]{.laboratorio} [|]{.sep} [FGV DIREITO SP]{.fgv}]{.ld-footer-tagline}
 
