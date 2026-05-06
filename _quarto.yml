@@ -47,13 +47,11 @@ website:
     border: false
     center: |
       ::: {.ld-footer-brand}
-      ![LabDados · Laboratório de Dados e Pesquisa Empírica em Direito · FGV Direito SP](/assets/logo-wordmark.png){.ld-footer-img fetchpriority="low"}
+      [Lab[Dados]{.dados}]{.ld-footer-wordmark}
 
-      FGV Direito SP · Rua Dr. Plínio Barreto, 365 · Bela Vista · São Paulo
+      [[LABORATÓRIO DE DADOS E PESQUISA EMPÍRICA EM DIREITO]{.laboratorio} [|]{.sep} [FGV DIREITO SP]{.fgv}]{.ld-footer-tagline}
 
-      `labdados.direitosp [at] fgv [.] br`
-
-      [GitHub](https://github.com/lab-dados){.ld-footer-link aria-label="GitHub do LabDados"} [·]{.ld-footer-sep} [Blog ↗](https://labdados.substack.com/){.ld-footer-link target="_blank" aria-label="Blog no Substack"}
+      [FGV Direito SP · Rua Dr. Plínio Barreto, 365 · Bela Vista · São Paulo]{.ld-footer-address}
 
       [Feito em [Quarto](https://quarto.org). Conteúdo sob [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).]{.ld-footer-fineprint}
       :::

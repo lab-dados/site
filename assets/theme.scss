@@ -122,17 +122,15 @@ h1 strong, h2 strong { color: var(--ld-blue-700); font-weight: 700; }
   }
 }
 
-// Footer — paper, with top hairline. Centered LabDados wordmark on top,
-// followed by address, social icons, and license/credits below.
+// Footer — compact, typed-text lockup that mimics the official logo:
+// "LabDados" wordmark on top + small-caps tagline + "FGV DIREITO SP".
 .nav-footer {
   border-top: 1px solid var(--ld-line);
   background: #fff;
   color: var(--ld-mute);
-  font-size: 0.92rem;
-  padding-block: 2.5rem;
+  font-size: 0.9rem;
+  padding-block: 1.5rem;
   a { color: var(--ld-navy); }
-  // Quarto stacks the page-footer in 3 columns by default. We collapse it
-  // into a single centered column.
   .nav-footer-left, .nav-footer-right { display: none; }
   .nav-footer-center { width: 100%; flex: 1 1 100%; }
 }
@@ -141,48 +139,56 @@ h1 strong, h2 strong { color: var(--ld-blue-700); font-weight: 700; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.85rem;
+  gap: 0.35rem;
   max-width: 720px;
   margin: 0 auto;
 }
-.ld-footer-brand img {
-  display: block;
-  max-width: 460px;
-  width: 100%;
-  height: auto;
-}
-.ld-footer-brand .ld-footer-meta {
-  color: var(--ld-mute);
-  font-size: 0.92rem;
-  line-height: 1.55;
-}
-.ld-footer-brand a.ld-footer-link {
-  display: inline-block;
-  padding: 0.4rem 0.95rem;
-  border-radius: 999px;
-  border: 1px solid var(--ld-line);
+.ld-footer-brand p { margin: 0; line-height: 1.45; }
+
+// Wordmark — same Manrope as the hero, smaller scale.
+.ld-footer-wordmark {
+  font-family: "Manrope", $headings-font-family;
+  font-weight: 800;
+  font-size: 1.55rem;
+  letter-spacing: -0.025em;
   color: var(--ld-navy);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.9rem;
-  transition: background .15s ease, border-color .15s ease;
+  line-height: 1;
 }
-.ld-footer-brand a.ld-footer-link:hover {
-  background: rgba(58,120,176,0.10);
-  border-color: rgba(58,120,176,0.35);
+.ld-footer-wordmark .dados {
+  color: var(--ld-blue);
+  font-weight: 700;
 }
-.ld-footer-brand .ld-footer-sep {
+
+// Tagline strip ("LABORATÓRIO DE DADOS E ... | FGV DIREITO SP")
+.ld-footer-tagline {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.7rem;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-family-sans-serif;
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  color: var(--ld-navy);
+  text-transform: uppercase;
+  margin-top: 0.1rem;
+}
+.ld-footer-tagline .laboratorio { font-weight: 500; }
+.ld-footer-tagline .fgv         { font-weight: 700; }
+.ld-footer-tagline .sep {
   color: var(--ld-line);
-  margin: 0 0.15rem;
+  font-weight: 300;
 }
-.ld-footer-brand .ld-footer-fineprint {
+
+.ld-footer-address {
   color: var(--ld-mute);
   font-size: 0.82rem;
+  margin-top: 0.55rem;
 }
-// Tighten paragraph spacing inside the footer brand block (Markdown turns
-// each paragraph into a <p>, which would otherwise push items apart).
-.ld-footer-brand p {
-  margin: 0;
+.ld-footer-fineprint {
+  color: var(--ld-mute);
+  font-size: 0.74rem;
+  margin-top: 0.1rem;
 }
 
 // Hero block (used in index)
@@ -283,16 +289,13 @@ h1 strong, h2 strong { color: var(--ld-blue-700); font-weight: 700; }
   position: relative;
   z-index: 1;
   width: 78%;
-  max-width: 280px;
+  max-width: 300px;
   height: auto;
   filter: drop-shadow(0 18px 40px rgba(16,62,92,0.18));
 }
 .ld-mark-svg .outline {
   fill: none;
   stroke: var(--ld-navy);
-  stroke-width: 5;
-  stroke-linejoin: round;
-  stroke-linecap: round;
 }
 .ld-mark-svg .dot {
   fill: var(--ld-blue);
@@ -307,15 +310,18 @@ h1 strong, h2 strong { color: var(--ld-blue-700); font-weight: 700; }
 .ld-hero-wordmark {
   position: relative;
   z-index: 1;
-  font-family: $headings-font-family;
-  font-weight: 700;
-  font-size: clamp(2rem, 4.4vw, 3.1rem);
-  letter-spacing: -0.02em;
+  // Manrope is the closest free Google Font to the official logo's wordmark
+  // (humanist geometric sans, rounded terminals, narrow apertures).
+  font-family: "Manrope", $headings-font-family;
+  font-weight: 800;
+  font-size: clamp(2rem, 4.4vw, 3.2rem);
+  letter-spacing: -0.025em;
   line-height: 1;
   color: var(--ld-navy);
 }
 .ld-hero-wordmark span {
   color: var(--ld-blue);
+  font-weight: 700;
 }
 
 // Stat strip

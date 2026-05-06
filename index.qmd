@@ -75,22 +75,32 @@ O LabDados é um laboratório da **FGV Direito SP** que constrói ferramentas, c
 
 ```{=html}
 <div class="ld-hero-mark">
-  <svg class="ld-mark-svg" viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="LabDados">
-    <!-- L outline -->
-    <path class="outline" d="M22,18 L22,158 L130,158"/>
-    <!-- D outline -->
-    <path class="outline" d="M138,18 L160,18 C195,18 210,52 210,88 C210,124 195,158 160,158 L138,158 Z"/>
-    <!-- 3x3 grid of square "data" dots inside the L -->
+  <svg class="ld-mark-svg" viewBox="0 0 230 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="LabDados">
+    <!-- L: thick stroke, vertical bar + horizontal foot, rounded corners. -->
+    <path class="outline"
+          d="M20,18 L20,178 L120,178"
+          stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- D: closed stroke shape, vertical spine + smooth right curve.
+         Sized to match L's bounding box (height 160, width ~95) so the
+         pair feels balanced. -->
+    <path class="outline"
+          d="M132,18 L132,178 L160,178 C198,178 210,138 210,98 C210,58 198,18 160,18 Z"
+          stroke-width="14" stroke-linejoin="round"/>
+    <!-- 3x3 grid of "data" dots inside the L. Top-left position is
+         intentionally missing — gives the mark its characteristic
+         asymmetric corner and ties to the official LabDados logo. -->
     <g>
-      <rect class="dot" data-pos="0,0" x="40"  y="40"  width="20" height="20" rx="3"/>
-      <rect class="dot" data-pos="0,1" x="68"  y="40"  width="20" height="20" rx="3"/>
-      <rect class="dot" data-pos="0,2" x="96"  y="40"  width="20" height="20" rx="3"/>
-      <rect class="dot" data-pos="1,0" x="40"  y="68"  width="20" height="20" rx="3"/>
-      <rect class="dot" data-pos="1,1" x="68"  y="68"  width="20" height="20" rx="3"/>
-      <rect class="dot" data-pos="1,2" x="96"  y="68"  width="20" height="20" rx="3"/>
-      <rect class="dot" data-pos="2,0" x="40"  y="96"  width="20" height="20" rx="3"/>
-      <rect class="dot" data-pos="2,1" x="68"  y="96"  width="20" height="20" rx="3"/>
-      <rect class="dot" data-pos="2,2" x="96"  y="96"  width="20" height="20" rx="3"/>
+      <!-- row 0: skip col 0 -->
+      <rect class="dot" data-pos="0,1" x="62" y="40" width="16" height="16" rx="3"/>
+      <rect class="dot" data-pos="0,2" x="86" y="40" width="16" height="16" rx="3"/>
+      <!-- row 1: all -->
+      <rect class="dot" data-pos="1,0" x="38" y="64" width="16" height="16" rx="3"/>
+      <rect class="dot" data-pos="1,1" x="62" y="64" width="16" height="16" rx="3"/>
+      <rect class="dot" data-pos="1,2" x="86" y="64" width="16" height="16" rx="3"/>
+      <!-- row 2: all -->
+      <rect class="dot" data-pos="2,0" x="38" y="88" width="16" height="16" rx="3"/>
+      <rect class="dot" data-pos="2,1" x="62" y="88" width="16" height="16" rx="3"/>
+      <rect class="dot" data-pos="2,2" x="86" y="88" width="16" height="16" rx="3"/>
     </g>
   </svg>
   <div class="ld-hero-wordmark">Lab<span>Dados</span></div>
