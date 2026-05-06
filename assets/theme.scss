@@ -253,6 +253,10 @@ footer.footer {
   letter-spacing: -0.015em;
 }
 .ld-hero-title strong { color: var(--ld-blue-700); font-weight: 700; }
+// Hide the empty title-block-header that Quarto generates above the
+// hero. Our JS moves the H1 out of it into .ld-hero-content before
+// paint; once moved, the H1 is no longer affected by this rule.
+main > header#title-block-header { display: none; }
 .ld-hero p.lead {
   font-size: clamp(1.05rem, 1.6vw, 1.25rem);
   color: var(--ld-mute);

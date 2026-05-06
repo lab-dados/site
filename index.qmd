@@ -1,14 +1,23 @@
 ---
+title: "Pesquisa empírica em direito **com ciência aberta**"
 pagetitle: "LabDados · Pesquisa empírica em direito, com ciência aberta"
 description: "Laboratório de Dados e Pesquisa Empírica em Direito da FGV Direito SP."
 page-layout: full
 toc: false
-include-in-header:
-  text: |
-    <style>main > header#title-block-header { display: none; }</style>
 include-after-body:
   text: |
     <script>
+    // Move Quarto's auto-generated <h1> from title-block-header into the
+    // hero's text column. Lets us keep a real <h1> in the DOM (SEO/a11y)
+    // while controlling its layout.
+    (function () {
+      const h1 = document.querySelector('header#title-block-header h1');
+      const target = document.querySelector('.ld-hero-content');
+      if (h1 && target) {
+        h1.classList.add('ld-hero-title');
+        target.prepend(h1);
+      }
+    })();
     (function () {
       const dots = Array.from(document.querySelectorAll('.ld-mark-svg .dot'));
       if (!dots.length) return;
@@ -58,10 +67,6 @@ include-after-body:
 ::: {.container-page}
 ::: {.ld-split}
 ::: {.ld-hero-content}
-```{=html}
-<div class="ld-hero-title" role="heading" aria-level="1">Pesquisa empírica em direito <strong>com ciência aberta</strong></div>
-```
-
 ::: {.lead}
 O **LabDados** é um núcleo de pesquisa empírica da **FGV Direito SP**, especializado em **inteligência artificial** aplicada ao direito. Fazemos pesquisa **com IA** (como método de investigação) e **sobre IA** (analisando seu uso e impacto), e desenvolvemos ferramentas e cursos para apoiar quem faz o mesmo.
 :::
