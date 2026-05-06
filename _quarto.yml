@@ -18,7 +18,7 @@ website:
   favicon: assets/favicon.svg
 
   navbar:
-    logo: assets/logo.svg
+    logo: assets/logo.png
     title: false
     pinned: true
     collapse-below: lg
@@ -47,7 +47,7 @@ website:
     border: false
     left: |
       <div class="ld-footer-brand">
-        <img src="/assets/logo-color.png" alt="LabDados — Laboratório de Dados e Pesquisa Empírica em Direito · FGV Direito SP">
+        <img src="/assets/logo.png" alt="LabDados — Laboratório de Dados e Pesquisa Empírica em Direito · FGV Direito SP">
         Rua Dr. Plínio Barreto, 365 · Bela Vista · São Paulo
       </div>
     center: |

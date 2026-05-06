@@ -31,10 +31,10 @@ $h1-font-size: 3rem;
 $h2-font-size: 2.1rem;
 $h3-font-size: 1.45rem;
 
-$navbar-padding-y: 0.9rem;
-$navbar-light-color:        rgba(255,255,255,0.78);
-$navbar-light-hover-color:  #fff;
-$navbar-light-active-color: #fff;
+$navbar-padding-y: 0.65rem;
+$navbar-light-color:        rgba(11, 16, 32, 0.78);
+$navbar-light-hover-color:  $ld-navy;
+$navbar-light-active-color: $ld-navy;
 
 $enable-rounded: true;
 $border-radius:    .55rem;
@@ -73,15 +73,30 @@ body {
 h1, h2, h3, h4 { letter-spacing: -0.01em; }
 h1 strong, h2 strong { color: var(--ld-green-700); font-weight: 700; }
 
-// Navbar — solid navy, white text
+// Navbar — white, navy text, with the colored logo from the brand asset.
 .navbar {
-  background: var(--ld-navy) !important;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  background: #ffffff !important;
+  border-bottom: 1px solid var(--ld-line);
   .navbar-brand { padding-block: 0.25rem; }
-  .navbar-brand img { height: 38px; width: auto; }
-  .nav-link { font-weight: 500; letter-spacing: 0.005em; }
-  .nav-link.active { color: #fff !important; border-bottom: 2px solid var(--ld-green); }
-  .navbar-toggler { border-color: rgba(255,255,255,0.25); }
+  .navbar-brand img {
+    height: 56px;
+    width: auto;
+    display: block;
+  }
+  .nav-link {
+    font-weight: 500;
+    letter-spacing: 0.005em;
+    color: var(--ld-ink);
+  }
+  .nav-link:hover { color: var(--ld-navy); }
+  .nav-link.active {
+    color: var(--ld-navy) !important;
+    border-bottom: 2px solid var(--ld-green);
+  }
+  .navbar-toggler { border-color: var(--ld-line); }
+  // Right-side icon links
+  .quarto-navbar-tools .quarto-navigation-tool { color: var(--ld-ink); }
+  .quarto-navbar-tools .quarto-navigation-tool:hover { color: var(--ld-navy); }
 }
 
 // Footer — paper, with top hairline
