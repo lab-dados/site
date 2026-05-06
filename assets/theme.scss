@@ -234,6 +234,22 @@ h1 strong, h2 strong { color: var(--ld-blue-700); font-weight: 700; }
   box-shadow: 0 0 0 4px rgba(58,120,176,0.18);
 }
 
+// Brand label above the hero headline — small wordmark mimicking the logo.
+.ld-brand-label {
+  display: inline-block;
+  font-family: "Manrope", $headings-font-family;
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+  color: var(--ld-navy);
+  line-height: 1;
+  margin-bottom: 0.95rem;
+}
+.ld-brand-label .dados {
+  color: var(--ld-blue);
+  font-weight: 700;
+}
+
 // CTA buttons
 .ld-cta {
   display: inline-flex;

@@ -52,6 +52,8 @@ include-after-body:
 ::: {.container-page}
 ::: {.ld-split}
 ::: {}
+[Lab[Dados]{.dados}]{.ld-brand-label}
+
 # Pesquisa empírica em direito **com ciência aberta**
 
 ::: {.lead}
